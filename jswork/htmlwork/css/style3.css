@@ -1,0 +1,14 @@
+#box1{
+    width: 500px;
+    height: 300px;
+    color: blue;
+    background-color: palegoldenrod;
+    margin: auto;
+}
+
+#box1 h1{text-align: center; padding: 20px;}
+
+#box1 ul li{list-style: none;
+text-align: center;}
+
+#box1 p{text-align: center;}

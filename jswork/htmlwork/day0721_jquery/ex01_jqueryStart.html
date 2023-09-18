@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script> <!-- 제이쿼리cdn (제이쿼리 링크 가져오기) -->
+    <!-- 구글cdn, ms cdn, 등등 아무거나 가져와도 상관없다. -->
+    <title>Document</title>
+    <script>
+        /* $(document).ready(function(){
+
+         });  
+         처음 로딩시 호출 (javascript에서 window.onload=function(){} 와 같다.)
+        */
+
+        $(function(){ // 위에꺼 너무 기니까 이렇게 쓰자. head단에는 무조건 넣어준다고 생각하자.
+            // alert("load");
+
+            // css 함수 : style 변경
+            // attr(속성) : 해당요소의 속성값 반환 (getAttribute)
+            // attr(속성,값) : 속성값을 해당 값으로 변경하는 것. (getAttribute, setAttribute 를 한번에 시행하는 개념)
+            // $("selector") : $안에 접근을 위한 요소값을 selector라고 한다.
+
+            // 모든 b태그의 글꼴을 18pt로 변경하자.
+            // $(선택자,selector)
+            $("b").css("font-size","28pt");
+
+            // b태그 중 클래스가 happy인 배경색을 바꾸시오
+            $("b.happy").css("background-color","pink");
+
+            // 모든 h2태그의 선(border)을 변경 및 글자색 변경
+                // 방법 1.
+                // $("h2").css("border","3px inset orange").css("color","red");
+
+                // 방법 2.
+                $("h2").css({"border":"3px double pink","color":"magenta"})
+
+
+            // 모든 이미지 속성 src 변경하기.
+            // $("img").attr("src","../만화이미지/15.png");
+            // $("img").css("width","100px");
+
+            // 위의 코드 한줄로
+            // $("img").attr("src","../만화이미지/15.png").css("width","100px");
+
+            // 스타일 여러개로
+            $("img").attr("src","../만화이미지/15.png").css({"width":"150px","border":"2px dotted green"});
+
+            // span태그중에서 class가 nice인 태그의 배경색, 글자색, 글자크기 변경하세요
+            $("span").css({"background-color":"yellow","color":"blue","font-size":"30pt"});
+
+
+            // q1.img 태그중에서 클래스명이 yourimg의 이미지를 변경하고
+            // width, border-radius, box-shadow를 변경하세요
+
+            $("img.yourimg").attr("src","../만화이미지/16.png").css({
+                "width":"200px",
+                "border":"2px solid pink",
+                "border-radius":"20px",
+                "box-shadow":"20px 20px 20px gray"});
+
+            // q2.아이디가 myimg의 이미지와 너비 변경하고, title을 '오늘은 불금!!' 으로 변경하라
+            $("#myimg").css("width","100px").attr({"src":"../만화이미지/14.png","title":"오늘은 불금!!"});
+
+        });
+
+        
+    </script>
+</head>
+<body>
+    <!-- $ 표시가 제이쿼리 사용한다는 뜻이다. -->
+    <h2>jquery에서 가장많이 사용하는 함수 css,attr</h2>
+    <b class="happy">B tag Class Happy</b>
+    <br>
+    <span class="nice">Span Tag Class Nice</span>
+    <br>
+    <h2 class="happy">H2 Tag Class Happy</h2>
+    <b>내가 좋아하는 이미지들</b>
+    <img src="">
+    <img src="" class="yourimg">
+    <img src="" id="myimg">
+    <img src="">
+
+
+</body>
+</html>

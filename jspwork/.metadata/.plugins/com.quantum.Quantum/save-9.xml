@@ -1,0 +1,184 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="/Users/imhyeongjun/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="23.2.0.0.0">
+			<jar fileName="/Users/imhyeongjun/Desktop/sist0615/utill/ojdbc11.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="com.mysql.cj.jdbc.Driver" name="MySQL Connector/J" type="MYSQL" version="mysql-connector-j-8.1.0 (Revision: 7b6f9a337afe6ccb41823df485bf848ca7952b09)">
+			<jar fileName="/Users/imhyeongjun/Desktop/sist0615/utill/mysql-connector-j-8.1.0.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:/Users/imhyeongjun/.p2/pool/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>oracle_scott</name>
+			<username>scott</username>
+			<password>tiger</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:XE</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/Desktop/sist0615/utill/ojdbc11.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>SCOTT</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select * from ajaxboard</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>mysql_scott</name>
+			<username>scott</username>
+			<password>tiger</password>
+			<prompt>false</prompt>
+			<connect>jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>com.mysql.cj.jdbc.Driver</driver>
+			<type>MYSQL</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/Desktop/sist0615/utill/mysql-connector-j-8.1.0.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>coffee</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select name from test1</queryString>
+				</query>
+				<query>
+					<queryString>select * from test1</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>mysql_coffee</name>
+			<username>root</username>
+			<password>dla570426</password>
+			<prompt>false</prompt>
+			<connect>jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>com.mysql.cj.jdbc.Driver</driver>
+			<type>MYSQL</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/Desktop/sist0615/utill/mysql-connector-j-8.1.0.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>coffee</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select max(num) from simpleboard</queryString>
+				</query>
+				<query>
+					<queryString>select * from simpleboard</queryString>
+				</query>
+				<query>
+					<queryString>delete from simpleboard where writer='최성현'</queryString>
+				</query>
+				<query>
+					<queryString>select * from simpleboard order by num desc</queryString>
+				</query>
+				<query>
+					<queryString>select * from simpleboard order by num desc limit 1,5</queryString>
+				</query>
+				<query>
+					<queryString>select * from simpleboard order by num desc limit 0,5</queryString>
+				</query>
+				<query>
+					<queryString>select count(*) simpleboard</queryString>
+				</query>
+				<query>
+					<queryString>select count(*) from simpleboard</queryString>
+				</query>
+				<query>
+					<queryString>delete from quizboard where q_num=1</queryString>
+				</query>
+				<query>
+					<queryString>select * from quizboard</queryString>
+				</query>
+				<query>
+					<queryString>create table member (num smallint auto_increment primary key,name varchar(20),id varchar(20),pass varchar(20), hp varchar(20),addr varchar(50),email varchar(30),gaipday date)</queryString>
+				</query>
+				<query>
+					<queryString>insert into member(name,id,pass,hp,addr,email,gaipday)values('이성신','lss','1234','010-1111-2222','경기도 시흥','lss@maplestory.com',now())</queryString>
+				</query>
+				<query>
+					<queryString>select * from member</queryString>
+				</query>
+				<query>
+					<queryString>select * from member where id='lss' and pass='1234'</queryString>
+				</query>
+				<query>
+					<queryString>create table guest(num smallint auto_increment primary key,myid varchar(20),content varchar(1000),photoname varchar(50),chu smallint default 0,writeday date)</queryString>
+				</query>
+				<query>
+					<queryString>select * from guest</queryString>
+				</query>
+				<query>
+					<queryString>create table id (num int auto_increment primary key,id varchar(20),pass varchar(30),name varchar(20))</queryString>
+				</query>
+				<query>
+					<queryString>drop table id</queryString>
+				</query>
+				<query>
+					<queryString>create table zid (num int auto_increment primary key,id varchar(20),pass varchar(30),name varchar(20))</queryString>
+				</query>
+				<query>
+					<queryString>drop table zid</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

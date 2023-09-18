@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 변수 var(let,const)</title>
+    <script>
+        var name1="임";
+        var name2="형";
+        var name3="준";
+        
+        var name=name1+name2+name3;
+
+        // 자바스크립트의 출력
+        // html 요소없이 출력..
+        // ()안의 것을 화면에 출력하라.
+        document.write("안녕하세요?<br>"+name+"입니다.<br>");
+        document.write("자바스크립트의 시작<br> '자바스크립트 1일차'<br>");
+        document.write('자바스크립트의 시작<br> "자바스크립트 1일차"<br>');
+        // 소따옴표, 대따옴표 바꿔서 사용 가능. 겹치지 않게만 하면 될듯..
+        
+    </script>
+</head>
+<body>
+<!--    자바스크립트의 출력 3가지
+    1. document.write()\
+    2. innerHTML : HTML 요소안에 출력해라.
+    3. console.log() : 브라우저의 콘솔탭에 출력  -->
+    <script>
+        var a;
+        a="변수연습";
+        a="100";
+
+        document.write(a+"<br>");
+        document.write(a+1+"<br>"); // 자바스크립트는 오류없이 문자열 인식하여 출력 된다.
+
+        // 대입연산자
+        var b=10;
+        document.write(b+"<br>");
+        b+=5;
+        document.write(b+"<br>");
+
+        // 증감연산자
+        var b=20;
+        b++;
+        document.write(b+"<br>");
+        b++;
+        document.write(b+"<br>"); 
+
+    </script>
+</body>
+</html>

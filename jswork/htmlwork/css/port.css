@@ -1,0 +1,50 @@
+
+*{
+    box-sizing: border-box; 
+}
+
+body{
+    background-color: #222;
+    height: 100%;
+}
+
+#container{
+    position: absolute;
+    margin-left: -450px;
+    width: 900px;
+    height: 100%;
+    background-color: #fff;
+    left: 50%;
+}
+
+aside{
+    float: left;
+    width: 300px;
+    padding: 20px 50px;
+    height: 100%;
+    background: lightgray;
+}
+
+aside>div>img{
+    width: 150px;
+    border-radius: 100px;
+}
+
+#main{
+    float: right;
+    padding: 40px;
+    width: 600px;
+    height: auto;
+
+}
+
+#portfolio{
+    list-style: none;
+    
+
+}
+#portfolio a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}

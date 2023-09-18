@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="a">
+        <div>Happy</div>
+        <div>Friday</div>
+    </div>
+
+    <div class="b">
+        <div>Java</div>
+        <div>Oracle</div>
+        <h3>클래스 아래의 h3태그 입니다</h3>
+        <img src="">
+    </div>
+
+    <div class="c">
+        <b>오늘은 즐거운 금요일</b>
+        <div>오늘은 제이쿼리 공부하는 날</div>
+        <h3>c클래스 아래의 h3태그 입니다</h3>
+        <div><img src=""></div>
+    </div>
+
+    <script>
+        // eq(0) : 0번 인덱스를 의미한다. 즉, 첫번째를 의미한다. 
+
+        // 1. div의 클래스명이 a인 태그 아래의 모든 div안에 있는 글자색 바꿔주세요
+        
+        $("div.a div").css({"color":"pink","font-family":"Nanum Pen Script","font-size":"30pt"});
+
+        // 2. b class의 바로 아래있는 div의 width값을 300px로 변경하시오
+        $("div.b div").css({"width":"300px","border":"2px solid blue"});
+
+        // 3. b class 아래의 img 태그의 src 변경하고 width 200px로 변경
+        $("div.b img").attr("src","../만화이미지/17.png").css("width","200px");
+
+        //4.c클래스인 div아래의 b태그의 글자색,배경색,글자크기 변경
+        $("div.c b").css({
+            "color":"cadetblue",
+            "background-color":"cyan",
+            "font-size":"20px"
+        });
+
+        //5.c클래스인 div 아래의 img 태그에 신민아 사진을 넣은 후 동그랗게 나오게 출력
+        //알아서 css
+        $("div.c img").attr("src","../연예인사진/16.jpg").css({
+            "border":"2px solid grey",
+            "border-radius":"15px",
+            "box-shadow":"5px 5px 5px grey"
+        })
+
+        //6.모든 h3태그의 배경을 회색,글자색을 그린색,너비를 300px,보더를 굵게 지정
+        $("h3").css({
+            "background-color":"grey",
+            "color":"green",
+            "width":"300px",
+            "border":"10px solid black"
+        })
+    </script>
+</body>
+</html>

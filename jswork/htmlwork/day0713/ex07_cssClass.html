@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        /* class: . 으로 표현, id: # 으로 표현 */
+        .happy{  /* happy라는 클래스의 전체태그에 적용된다. */
+            color: #ffccff;
+            font-size: 40px;
+            font-family: Nanum Pen Script;
+        }
+        b.nice{ /* b태그 영역에서만 적용되는 클래스 */
+            text-decoration: underline;
+            color: dodgerblue;
+            text-shadow: 3px 3px 3px #ccc;
+        }
+
+        img.imga{
+            width: 400px;
+            border: 10px groove gray;
+            margin-left: 200px;
+            margin-bottom: 50px;
+            
+        }
+        img.imgb{
+            /* 가로 세로 200, 그림자, 테두리 둥글게 */
+            width: 300px;
+            height: 300px;
+            margin-left: 20px;
+            box-shadow: 5px 5px 5px 5px gray;
+            border-radius: 150px;
+        }
+
+        b.bts{
+            font-size: 40px;
+            font-family: Moirai One;
+            color: brown;
+            margin-left: 70px;
+        }
+        
+    </style>
+</head>
+<body>
+    <font size="5" color="red">Font Tag!!</font><br>
+    <span style="color: magenta; font-size: 2em;">Span Tag!!</span> <!-- 높이조절 불가 -->
+    <span style="border: 2px solid green;">안녕하세요</span> <!-- 높이조절 불가 -->
+    <div class="happy">Div Tag_#1!!!</div> <!-- 블록형태라고 생각하면 편하다.-->
+    <div>Div Tag_#2!!!</div> 
+    <b class="happy nice">B Tag!!! 굵게 속성 포함된 태그</b><br> <!-- class 2가지 모두 적용 됨. -->
+    <img src="../html_img/dog1.jpg" alt="이미지 없다" title="갱얼쥐 1" class="imga"> <!-- alt는 이미지 안뜨거나 할때 활용, 청각장애인을 위해 사용.-->
+    <br>
+    <img src="../html_img/dog2.jpg" alt="이미지 없음둥" title="갱얼쥐 두번째!" class="imgb">
+    <br>
+    <img src="../html_img/dog2.jpg" alt="이미지 없음둥" title="갱얼쥐 두번째!" class="img-circle">
+    <br>
+    <b class="bts">육계장</b>
+    <img src="../day0712/Food/3.jpg" alt="이미지 없음둥" title="배고프다!!" class="img-rounded">
+    <br>
+    <img src="../day0712/Food/4.jpg" alt="이미지 없음둥" title="배고프다!!" class="img-circle">
+    <br>
+    <img src="../day0712/Food/5.jpg" alt="이미지 없음둥" title="배고프다!!" class="img-thumbnail">
+    <br>
+   
+
+</body>
+</html>

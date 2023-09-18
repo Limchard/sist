@@ -1,0 +1,133 @@
+package Day0710_1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class asdfsdafsf {
+	
+	//나중에 프로젝트때 aws를 활용해서 공동의 url을 만들어야함
+	static final String URL="jdbc:oracle:thin:@localhost:1521:XE";
+	
+	
+	
+	public void connectSawon() {
+		
+		//싱글톤이라 한 메서드 안에서 사용해야함 //전역으로 못 뺌
+		//connection statement resultset 필요
+		Connection conn=null; //url 계정 연결
+		Statement stmt=null; //sql문 CRUD 전체 전달
+		ResultSet rs=null; //select때 필요 쿼리문 읽어오기
+		
+		String sql="select * from sawon order by name"; //sawon 테이블 불러오기
+		
+		//연결
+		try {
+			conn=DriverManager.getConnection(URL, "scott", "tiger"); //오라클 주소, 이름, 비밀번호
+			System.out.println("클라우드 오라클 서버 연결성공!!!");
+			
+			//sql문 전달
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);//
+			
+			while(rs.next()) //-> 데이터 없어서 false값 될때까지 반환//true값 반환
+			{
+				//db로부터 데이터 가져오기
+				//1개의 열 1개씩 반환
+				int num=rs.getInt("num"); //->오라클 테이블 컬럼명 or 열번호
+				String name=rs.getString("name");
+				String gender=rs.getString("gender");
+				String buseo=rs.getString("buseo");
+				int pay=rs.getInt("pay");
+				
+				System.out.println(num+"\t"+name+"\t"+gender+"\t"+buseo+"\t"+pay);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오라클 서버 연결실패!!!"+e.getMessage());
+		} finally {
+			try {
+				//null이면 비어있는 경우라서 파일을 열지도 않으니 null이 아니라면 닫아달라는말
+				if(rs!=null)
+					rs.close();
+				if(stmt!=null)
+					stmt.close();
+				if(conn!=null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	
+	public void connectBamin() {
+		//주문번호		주문자	음식명	가격		상호명	가게위치		주문자주소
+		Connection conn=null;
+		Statement stmt=null;
+		ResultSet rs=null;
+		
+		String sql="select f.fno, j.name, f.foodname, f.price, f.shopname, f.loc, j.addr\n"
+				+ "from food f, jumun j\n"
+				+ "where f.fno=j.fno\n";
+		
+		try {
+			conn=DriverManager.getConnection(URL, "scott", "tiger");
+			System.out.println("오라클 연결 성공!!!");
+			
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(sql);
+			
+			System.out.println("***배민 주문 고객 리스트***");
+			System.out.println("주문번호\t주문자명\t음식명\t가격\t상호명\t가게위치\t주문자위치");
+			
+			while(rs.next())
+			{
+				int ornum=rs.getInt("fno");
+				String orname=rs.getString("name");
+				String fname=rs.getString("foodname");
+				int won=rs.getInt("price");
+				String sname=rs.getString("shopname");
+				String loc=rs.getString("loc");
+				String oraddr=rs.getString("addr");
+				
+				System.out.println(ornum+"\t"+orname+"\t"+fname+"\t"+won+"\t"+sname+"\t"
+									+loc+"\t"+oraddr);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("오라클 연결실패 !!!"+e.getMessage());
+		}finally {
+			
+				try {
+				if(rs!=null)
+					rs.close();
+				if(stmt!=null)
+					stmt.close();
+				if(conn!=null)
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+			
+	asdfsdafsf oc=new asdfsdafsf();
+		//oc.connectSawon();
+		oc.connectBamin();
+	}
+
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("안녕하세요 순영님... 자바스크립트 재미있죠?<br>");
+        document.write("안녕하세요 민규님... 자바스크립트 재미있죠?<br>");
+        document.write("안녕하세요 성신님... 자바스크립트 재미있죠?<br>");
+        document.write("안녕하세요 시온님... 자바스크립트 재미있죠?<br>");
+
+        /* 중복되는것을 함수로 포장한 후.. 중복되지 않는 부분을 파라메터로 만든 후 
+           함수를 호출할 때 값을 넘긴다. */
+
+        function showName(name){
+            document.write("안녕하세요 "+name+"님... 자바스크립트 재미있죠?<br>");
+        }
+        showName("순영");
+        showName("민규");
+        showName("성신");
+        showName("시온");
+
+
+    // Q. 안녕하세요? A님의 나이는 B살 입니다. 로 출력해보세요
+    // 함수명: showInfo
+        
+        function showInfo(iName,age){
+            document.write("안녕하세요? "+iName+"님의 나이는 "+age+"살 입니다.<br>");
+        }
+
+        showInfo("메붕",24);
+        showInfo("엘리",43);
+        showInfo("헤네",53);
+        showInfo("커닝",34);
+        
+    // Q. 본인의 이름,나이,키,몸무게를 파라메터로 받아서 출력하는 변수를 만드세요
+        //  이름: 홍길동
+        //  나이: 26세
+        //  키 : 170cm
+        //  몸무게 : 64kg
+
+        function showMy(myName,myAge,height,weight){
+            document.write("이름: "+myName+"<br>나이: "+myAge+"세<br>키: "+height+"cm<br>몸무게: "+weight+"kg<br>");
+        }
+        showMy("마법사",29,171,73);
+
+        myInfo=function(irum,nai,ki,mom){ // 전역변수
+            document.write("이름: "+irum+"<br>나이: "+nai+"세<br>키: "+ki+"cm<br>몸무게: "+mom+"kg<br>");
+        }
+        myInfo("전사",26,170,64)
+
+        var myInfo=function(irum,nai,ki,mom){  // 지역변수
+            document.write("이름: "+irum+"<br>나이: "+nai+"세<br>키: "+ki+"cm<br>몸무게: "+mom+"kg<br>");
+        }
+        myInfo("궁수",36,156,55)
+        document.write("=================================<br>");
+        myInfo("도적",32,174,64)
+        document.write("=================================<br>");
+        myInfo("메붕이",26,167,49)
+
+    </script>
+</body>
+</html>

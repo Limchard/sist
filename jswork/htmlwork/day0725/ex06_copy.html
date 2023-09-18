@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="btn btn-info" id="btn1">1번 영역 복사해서 3번 영역에 추가하기</button>
+    <br>
+    <button type="button" class="btn btn-info" id="btn2">2번 영역 복사해서 4번 영역에 추가하기</button>
+    <br>
+    <button type="button" class="btn btn-info" id="btn3">3,4번 영역 모두 지우기</button>
+    <br>
+    <br>
+    <hr>
+    <div id="box1">
+        <b>1번 박스</b>
+        <img src="../만화이미지/15.png">
+        <img src="../만화이미지/16.png">
+    </div>
+
+    <div id="box2">
+        <b>2번 박스</b>
+        <img src="../만화이미지/12.png">
+        <img src="../만화이미지/17.png">
+    </div>
+
+    <div id="box3">
+        <b>3번 박스</b>
+    </div>
+
+    <div id="box4">
+        <b>4번 박스</b>
+    </div>
+
+    <script>
+        $("#btn1").click(function(){
+            // box1의 아래 모든 img 태그를 복사하자
+            var no1=$("#box1").find("img").clone();  // box1 아래에서 모든 img를 복사한다
+            // box3 영역에 추가한다.
+            $("#box3").append(no1);
+        })
+
+        $("#btn2").click(function(){
+            var no2=$("#box2 img").clone();
+            $("#box4").append(no2);
+        })
+
+        $("#btn3").click(function(){
+            $("#box3,#box4").find("img").remove();
+        })
+    </script>
+</body>
+</html>

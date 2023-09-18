@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date=new Date();
+        document.write("date.getFullYear()"+date.getFullYear()+"<br>");
+        document.write((date.getMonth()+1)+"<br>");
+        document.write(date.getDate()+"<br>");
+        document.write(date.getDay())+"<br>"; // 1: 월요일, 2: 화요일... 요일을 숫자로 출력해줌
+
+        // 오늘은 2023년 7월 27일 입니다.
+        document.write("오늘은 "+date.getFullYear()+"년 "+(date.getMonth()+1)+"월 "+date.getDate()+"일 입니다.<br>");
+
+        // isNaN(Not a Number) : 문자가 끼어있나 안끼어있나 찾는것, 문자가 껴있으면 true, 숫자일경우 false
+        document.write(isNaN(100)+"<br>"); // false
+        document.write(isNaN("Hello")+"<br>"); // true
+        document.write(isNaN("a100")+"<br>"); // true
+        document.write(isNaN("100")+"<br>"); // false (문자형 숫자도 숫자로 인식한다.)
+    </script>
+</body>
+</html>

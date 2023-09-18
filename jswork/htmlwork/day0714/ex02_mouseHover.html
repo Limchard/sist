@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myimg1{
+            width: 200px;
+            height: 200px;
+            border-radius: 30px;
+            border: 2px solid rgb(90, 90, 210);
+        }
+
+        /* #myimg1:hover{
+            background-image: url("../day0712/flower_ani/f1.png");
+        }
+        
+        #myimg1:active{
+            background-image: url("../day0712/flower_ani/f10");
+        } */
+        
+
+    </style>
+</head>
+<body>
+    <!-- 이미지 마우스 이벤트 -->
+    <img src="../logoImg/captain.png" title="캡틴 아메리카" id="myimg1" 
+    onmouseover="this.src='../day0712/flower_ani/f1.png'"
+    onmouseout="this.src='../logoImg/captain.png'">
+
+    <img src="../logoImg/a05.png" onmouseenter="this.src='../logoImg/captain.png'" onmouseleave="this.src='../logoImg/a05.png'">
+
+</body>
+</html>

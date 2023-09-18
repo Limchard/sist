@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            float: left;
+            width: 150px;
+            height: 50px;
+            border: 1px solid gray;
+            text-align: center; /* 가로방향 가운데로 위치  */
+            line-height: 50px; /* 줄간격 : 세로가운데 주려면 위에 준 height와 동일한 값을 주어야 한다. */
+            margin-left: 10px; /* 왼쪽으로 띄우기 */
+            margin-right: 5px;
+            margin-top: 20px;
+            /* margin: 20px 10px 0 3px; : top부터 시계방향으로 값 주는 것 */
+            background-color: aqua;
+            font-size: 25px;
+            font-family: 'Bagel Fat One'; /* 위의 ling에서 복붙 하고(&family= 기준으로 끊어주는듯), '+'표시는 스페이스바로 대체하여 기입한다. */
+            border-radius: 20px; /* 모서리 round값 주기 100 px 주면 동그래짐. */
+        }
+        li:hover{ /* 마우스를 메뉴에 올려놓을때 생기는 이벤트 */
+            background-color: violet; /* 마우스 올려놓았을때 배경색상 변경 */
+            color: white; /* 마우스 올려놓았을때 글씨색상 변경 */
+            cursor: pointer; /* 마우스 올려놓았을때 마우스 커서모양 변경 변경 */
+            box-shadow: 5px 5px 5px 5px gray; /* 마우스 올려놓았을때 그림자 생성 (값이 3개니까 3방향 그림자 생성) */
+        }
+    </style>
+</head>
+<body>
+    <h1>ul을 이용하여 간단하게 메뉴를 만들어보자</h1>
+    <br>
+    <ul>
+        <li>Home</li>
+        <li>shop 소개</li>
+        <li>게시판</li>
+        <li>방명록</li>
+        <li>오시는길</li>
+        <li>Q&A</li>
+    </ul>
+</body>
+</html>

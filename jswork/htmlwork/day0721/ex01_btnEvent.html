@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #photo{
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            width: 400px;
+            height: 500px;
+            border: 10px groove gold;
+        }
+        #btnRandom{
+            margin-left: 400px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    
+</head>
+<body>
+    <input type="image" src="../logoImg/icon03.png" id="btnRandom">
+    <b>이미지 버튼을 누르면 이미지 바뀝니다</b>
+    <img src="" id="photo">
+    <script>
+        // 배열에 여러개 이미지 넣는다.
+        var imgArr=new Array(); // 자바스크립트는 추가 삭제가 가능하기에 괄호안에 아무것도 안넣어도 된다.
+
+        imgArr.push("../연예인사진/1.jpg");
+        imgArr.push("../연예인사진/4.jpg");
+        imgArr.push("../연예인사진/13.jpg");
+        imgArr.push("../연예인사진/16.jpg");
+        imgArr.push("../연예인사진/5.jpg");
+        imgArr.push("../연예인사진/2.jpg");
+        imgArr.push("../연예인사진/3.jpg");
+        imgArr.push("../연예인사진/20.jpg");
+        imgArr.push("../연예인사진/19.jpg");
+        imgArr.push("../연예인사진/17.jpg");
+
+        // id값 얻어 변수 지정
+        var photo=document.getElementById("photo");
+        var btnRandom=document.getElementById("btnRandom");
+
+        // 초기 이미지를 얻어더 랜덤하게 초기이미지 넣기
+        // 0~9 사이의 난수값을 얻는다.
+        var idx=parseInt(Math.random()*10);
+        // photo의 경로값을 수정해 준다.
+        photo.setAttribute("src",imgArr[idx]);
+        // button 이벤트 .. 이미지버튼을 누르면 0~9 사이의 난수값을 얻는다.... photo의 경로값을 수정해 준다.
+        
+        btnRandom.onclick=function(){
+
+            var idx=parseInt(Math.random()*10);
+            photo.setAttribute("src",imgArr[idx]);
+        }  
+    </script>
+</body>
+</html>

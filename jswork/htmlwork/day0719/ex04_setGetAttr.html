@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .simg{
+            width: 100px;
+            height: 130px;
+            border-radius: 20px;
+        }
+
+        .result{
+            width: 300px;
+            height: 390px;
+            border-radius: 40px;
+        }
+
+        #simg_div{
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            cursor: pointer; /* 마우스 커서 올리면 손(손가락)모양) */
+        }
+
+        #result_div>img{
+            position: absolute;
+            width: 300px;
+            height: 390px;
+            left: 150px;
+            top: 400px;
+        }
+
+    </style>
+
+    <script>
+        
+        window.onload=function(){
+        /*
+        // id 읽기
+        var img1=document.getElementById("img1");
+        var img2=document.getElementById("img2");
+        var img3=document.getElementById("img3");
+        var img4=document.getElementById("img4");
+        var img5=document.getElementById("img5");
+        var imgresult=document.getElementById("imgresult");
+
+        // 이벤트 주기
+        
+            img1.onclick=function(){
+                imgresult.setAttribute("src",img1.getAttribute("src"));
+            }
+            img2.onclick=function(){
+                imgresult.setAttribute("src",img2.getAttribute("src"));
+            }
+            img3.onclick=function(){
+                imgresult.setAttribute("src",img3.getAttribute("src"));
+            }
+            img4.onclick=function(){
+                imgresult.setAttribute("src",this.getAttribute("src"));
+            }
+            img5.onclick=function(){
+                imgresult.setAttribute("src",this.getAttribute("src"));
+            }
+*/
+            // 배열로 풀기
+            var img=[document.getElementById("img1"),document.getElementById("img2"),document.getElementById("img3"),document.getElementById("img4"),document.getElementById("img5")];
+
+            //이벤트부여
+            for(var i=0;i<img.length;i++){
+                img[i].onclick=function(){
+                    imgresult.setAttribute("src",this.getAttribute("src"));
+                }
+}
+
+
+
+        }
+        
+    </script>
+</head>
+<body>
+    <!-- <div id="simg_div">
+        <img src="../연예인사진/12.jpg" id="img1" class="simg" onclick="toresult">
+        <img src="../연예인사진/2.jpg" id="img2" class="simg" onclick="toresult">
+        <img src="../연예인사진/14.jpg" id="img3" class="simg" onclick="toresult">
+        <img src="../연예인사진/17.jpg" id="img4" class="simg" onclick="toresult">
+        <img src="../연예인사진/1.jpg" id="img5" class="simg" onclick="toresult">
+    </div> -->
+
+    <div id="simg_div">
+        <img src="../연예인사진/12.jpg" id="img1" class="simg">
+        <img src="../연예인사진/2.jpg" id="img2" class="simg">
+        <img src="../연예인사진/14.jpg" id="img3" class="simg">
+        <img src="../연예인사진/17.jpg" id="img4" class="simg">
+        <img src="../연예인사진/1.jpg" id="img5" class="simg">
+    </div>
+
+    <div id="result_div">
+        <img src="../연예인사진/5.jpg" class="result" id="imgresult">
+    </div>
+</body>
+</html>

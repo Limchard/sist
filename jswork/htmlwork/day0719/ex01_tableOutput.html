@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #out{
+            position:absolute; /* 화면크기 변동에 상관없이 위치 고정, 즉 화면이 작아진다고 해서 위취가 바뀌거나 하지 않는다. */
+            left: 10px;
+            top: 150px;
+            width: 400px;
+            height: 150px;
+            border: 1px solid gray;
+            background-color: burlywood;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function writeInfo(){ // 사용자 정의 함수니까 function 
+            // 취미
+            var hobbyStr="나의 취미는";
+            var flag=false;
+
+             //name의 frm.hobby로 가져와서 배열처럼 사용 가능
+            for(var i=0;i<frm.hobby.length;i++){
+                // 선택이 되면 value값을 얻어서 hobbyStr에 추가
+                if(frm.hobby[i].checked){
+                    flag=true;
+                    hobbyStr+=frm.hobby[i].value+" ";
+                }
+            }
+            // 취미를 하나도 선택 안하면 초기값 그대로 false 된다.
+            if(!flag){
+                hobbyStr="나의 취미는 없습니다<br>";
+            } else {
+                hobbyStr+="입니다<br>";
+            }
+            // 출력
+            out.innerHTML=hobbyStr;
+
+            // radio
+            var homeStr="나의 거주지는 ";
+            for(var i=0;i<frm.home.length;i++){
+                if(frm.home[i].checked)
+                homeStr+=frm.home[i].value+"입니다.<br>";
+            }
+            out.innerHTML+="거주지: "+homeStr;
+            
+            // select
+            out.innerHTML+="나이: "+frm.age.value;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm"> <!-- action에는 원래 경로가 들어간다. -->
+        <table border="1" style="width: 400px;">
+            <tr>
+                <th width="100">취미</th>
+                <td>
+                    <input type="checkbox" name="hobby" value="게임">게임&nbsp;
+                    <input type="checkbox" name="hobby" value="운동">운동&nbsp;
+                    <input type="checkbox" name="hobby" value="여행">여행&nbsp;
+                    <input type="checkbox" name="hobby" value="유튜브">유튜브&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <th width="100">거주지</th>
+                <td>
+                    <input type="radio" name="home" value="서울" checked>서울&nbsp;
+                    <input type="radio" name="home" value="안산">안산&nbsp;
+                    <input type="radio" name="home" value="시흥">시흥&nbsp;
+                    <input type="radio" name="home" value="수원">수원&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <th width="100">연령대</th>
+                <td>
+                    <select name="age">
+                        <!—- value값 맞춰줘야함 -—>
+                        <option value="10대">10대</option>
+                        <option value="20대">20대</option>
+                        <option value="30대">30대</option>
+                        <option value="40대">40대</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="결과출력" onclick="writeInfo()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="out"></div>
+</body>
+</html>

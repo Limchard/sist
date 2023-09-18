@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 20pt;
+            margin-bottom: 10px;
+        }
+        .hello_0{
+            border: 10px groove orange;
+            font-family: Nanum Pen Script;
+            background-color: pink;
+            color: black;
+        }
+        .hello_1{
+            border: 10px inset blue;
+            font-family: East Sea Dokdo;
+            background-color: aquamarine;
+            color: black;
+        }
+        .hello_2{
+            border: 10px solid yellowgreen;
+            background-color: yellow;
+            color: black;
+        }
+        .hello_3{
+            border: 10px groove red;
+            font-family: Moirai One;
+            background-color: magenta;
+            color: wheat;
+        }
+        .hello_4{
+            border: 10px groove green;
+            font-family: Nanum Pen Script;
+            background-color: gold;
+            color: brown;
+        }
+    </style>
+
+<script>
+$(function(){
+    // 적용버튼 누르면 모든 div에 인덱스별 클래스가 적용된다.
+    $("button:eq(0)").click(function(){ 
+        $("div").each(function(num){ // num: index, element는 생략된 상태
+            // div에 차례대로 hello_0 ~ hello_4 까지 적용해라
+            $(this).addClass("hello_"+num);
+        });
+    });
+
+    // 제거 누르면 인덱스별 적용된 클래스가 제거된다.
+    $("button:eq(1)").click(function(){
+        $("div").each(function(num){  // 제거시에는 이 행 삭제해도 됨.
+            $("div").removeClass("hello_"+num); // removeClass 괄호안에 아무것도 적지 않으면 모든 class 삭제
+        });
+    });
+});
+    
+    </script>
+</head>
+<body>
+    <button type="button" class="btn btn-outline-info">스타일 적용</button>
+    <button type="button" class="btn btn-outline-danger">스타일 제거</button>
+    <div>안녕하세요</div>
+    <div>오늘은 제이쿼리</div>
+    <div>반복문과 addClass를</div>
+    <div>배우고 있어요</div>
+    <div>화이팅!!!</div>
+
+
+</body>
+</html>

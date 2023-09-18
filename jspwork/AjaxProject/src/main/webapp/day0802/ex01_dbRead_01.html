@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>Insert title here</title>
+<style>
+	#show{
+		width: 250px;
+	}
+	
+</style>
+</head>
+<body>
+	<button type="button" id="btn1" class="btn btn-outline-info">xml 읽기 (myfood)</button>
+	<button type="button" id="btn2" class="btn btn-outline-success">json 읽기 (shop)</button>
+	<div id="show">출력하는 곳</div>
+	
+	<script>
+		$("#btn1").click(function(){
+			$("#show").empty();
+			var s="";
+			
+			$.ajax({
+				type:"get",
+				url:"ex01_foodtoxml.jsp",
+				dataType:"xml",
+				success:function(res){
+					$(res).find("myfood").each(function(idx,ele){
+						s+="<div class='alert alert-info'>";
+						s+="No: "+$(ele).attr("num")+"<br>";
+						s+="음식이름 :"+$(ele).find("foodname").text()+"<br>";
+						s+="사진: <img src='"+$(ele).find("foodphoto").text()+"' style='width: 50px; background-color: yellow; border-radius: 10px;'><br>";
+						s+="가격: "+$(ele).find("price").text()+"<br>";
+						s+="수량: "+$(ele).find("cnt").text()+"<br>";
+						s+="</div>";
+					})
+					$("#show").html(s);
+				}
+			})
+		})
+		
+		$("#btn2").click(function(){
+			$("#show").empty();
+			var s="";
+			
+			$.ajax({
+				type:"get",
+				url:"ex01_shoptojson.jsp",
+				dataType:"json",
+				success:function(res){
+					
+					s="<table class='table table-bordered' style='width:700px'>";
+					s+="<tr>";
+					s+="<th>번호</th><th>상품명</th><th>색상</th><th>이미지</th><th>가격</th>";
+					s+="</tr>"
+					
+					
+					$.each(res,function(i,e){
+						s+="<tr>";
+						s+="<td>"+e.num+"</td>";
+						s+="<td>"+e.sangpum+"</td>";
+						s+="<td>"+e.color+"<br><div style='background-color:"+e.color+"; width: 50px; height: 50px; border: 1px solid gray; border-radius: 50px;'></div></td>";
+						var img=e.imgname;
+						s+="<td><img src='"+img+"' style='width: 50px; background-color: yellow; border-radius: 10px;'></td>";
+						s+="<td>"+e.price+"</td>";
+						
+						s+="</tr>";
+					})
+					s+="</table>";
+					$("#show").html(s);	
+				}	
+			})	
+		})
+	</script>
+</body>
+</html>

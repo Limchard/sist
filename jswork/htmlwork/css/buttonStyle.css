@@ -1,0 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=East+Sea+Dokdo&family=Nanum+Pen+Script&family=Orbit&display=swap');
+body{
+    font-family: 'East Sea Dokdo';
+}
+.btn{
+    width: 120px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+
+.btn-pink{
+    background-color: pink;
+    color: black;
+}
+
+.btn-black{
+    background-color: black;
+    color: white;
+
+}
+
+.btn-yellow{
+    background-color: yellow;
+    color: black;
+}
+
+.btn-sky{
+    background-color: cornflowerblue;
+    color: black;
+}
+

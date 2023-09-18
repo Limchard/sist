@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <title>Document</title>
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+            border: 1px solid gray;
+            border-radius: 20px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            // id로 해당 요소값을 읽기
+            var myimg1=document.getElementById("myimg1");
+            var myimg2=document.getElementById("myimg2");
+            var btn1=document.getElementById("btn1");
+            var btn2=document.getElementById("btn2");
+            var btninit=document.getElementById("btninit");
+
+            // 읽어온 객체에 이벤트 부여하기
+            btn1.onclick=function(){
+                // alert("이벤트시작!!"); -> 동작 제대로 하는지 확인용.
+
+                // 속성값 읽어오기
+                // myimg1.getAttribute("src");
+
+                // 속성값 변경
+                myimg1.setAttribute("src","../logoImg/toy04.png");
+                myimg2.setAttribute("src","../logoImg/toy06.png");
+
+                // 스타일시트로 너비주면, 변경도 스타일시트로 줘야한다.
+                // myimg1.style.width="300px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>이미지 2개</h1>
+    <img src="../logoImg/icon01.png" id="myimg1">
+    <img src="../logoImg/icon03.png" id="myimg2">
+    
+    <hr>
+
+    <button type="button" id="btn1" class="btn btn-pink">이미지변경#1</button>
+    <button type="button" id="btn2" class="btn btn-yellow">이미지변경#2</button>
+    <button type="button" id="btninit" class="btn btn-black">원래대로</button>
+
+<!-- 속성변경
+     setAttribute("src","../im")
+     get -->
+
+</body>
+</html>

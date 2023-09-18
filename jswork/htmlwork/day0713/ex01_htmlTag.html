@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Html 기본태그</title>
+</head>
+<body>
+    <!-- a태그 : 링크해주는 것 -->
+    <!-- href : 주소 입력하는 것. -->
+    <a href="http://www.naver.com">Naver</a> <br><!-- 해당 창에서 바로 열림 -->
+    <a href="http://www.naver.com"><img src="../html_img/naver.gif"></a> <br><!-- 해당 창에서 바로 열림 -->
+    <a href="http://www.nate.com" target="_blank">Nate</a> <br> <!-- 새창으로 열림 -->
+    <a href="http://www.nate.com" target="_blank"><img src="../html_img/nate.gif"></a> <br> 
+    <a href="http://www.google.com" target="_new">Google</a> <br> <!-- 새창으로 열림 --> 
+
+
+    <!--  이미지 -->
+    <img title="유자 이미지" src="../day0712/flower_ani/f14.png" border="1" hspace="100" vspace="200"> <br>
+    <!-- title="" 은 마우스 커서를 올려놓으면 기입한 글자가 뜬다. -->
+    <!-- hspace : 가로(오른쪽)로 이동, vspace : 세로(아래)로 이동 -->
+
+    <img title="고양이 이미지" src="../logoImg/a.png" style="border: 10px solid magenta;"> <br>
+    <!-- 스타일의 경우 border상에 px단위를 꼭 넣어줘야 한다. -->
+    <img title="고양이 이미지" src="../logoImg/a.png" style="border: 10px groove magenta; width: 100px;"> <br>
+    <a href="https://cafe.naver.com/javasoo"><img title="유자 이미지" src="../day0712/flower_ani/f14.png" border="1" hspace="100" vspace="200"> <br></a>
+
+
+<!-- marquee 태그 : 이동하는 tag -->
+    <marquee>우리는 오늘 html 공부중입니다</marquee> <!-- left(오른쪽에서 왼쪽으로)가 기본이다.-->
+    <marquee direction="right">우리는 오늘 html 공부중입니다</marquee> <!--왼쪽에서 오른쪽으로!-->
+    <marquee direction="right" bgcolor="#ff00ff">우리는 오늘 html 공부중입니다</marquee> <!-- brcolor : 백그라운드 컬러-->
+
+<!-- 이미지 5개 오른쪽으로 이동! -->
+    <marquee direction="right">
+    <img src="../html_img/image_01.png" width="150" height="150"> 
+    <img src="../html_img/image_02.png" width="150" height="150"> 
+    <img src="../html_img/image_03.png" width="150" height="150"> 
+    <img src="../html_img/image_04.png" width="150" height="150"> 
+    <img src="../html_img/ho.jpg" width="150" height="150"> 
+    </marquee>
+
+    <!-- 글자위치 -->
+    <h1 align="center">오늘은 목요일</h1> <!-- br태그 자동 적용 -->
+    <h1 align="left">오늘은 목요일</h1> 
+    <h1 align="right">오늘은 목요일</h1> 
+
+    <!-- 특수기호 -->
+
+    A         b            c <br>
+    A b c <br>
+    A &nbsp; b &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c <br> <!-- &nbsp : 띄어쓰기-->
+    &copy; 쌍용교육센터 <br>
+    <!-- <지금 시각은 10시 8분> -->
+    &lt; 지금 시각은 10시 8분 &gt; <br>
+    <hr>
+
+    <!-- a태그로 html파일 이동!! -->
+    <a href="../day0712/ex1_htmlTag.html" target="_new">어제 1번 예제</a><br>
+    <a href="../day0712/ex2_htmlTage.html" target="_blank">어제 2번 예제</a><br>
+    <a href="../day0712/quiz.html" target="_blank">어제 과제 예제</a><br> 
+    
+    
+
+
+
+</body>
+</html>

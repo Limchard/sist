@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="db_oracle.DBConnect"/>
+    <fullyQualifiedTypeName name="java.security.DrbgParameters.NextBytes"/>
+    <fullyQualifiedTypeName name="model.sinsang.SinsangDto"/>
+    <fullyQualifiedTypeName name="model.myteam.TeamDao"/>
+    <fullyQualifiedTypeName name="model.myteam.TeamDto"/>
+    <fullyQualifiedTypeName name="model.mymall.mallDto"/>
+    <fullyQualifiedTypeName name="model.intro.IntroDto"/>
+    <fullyQualifiedTypeName name="db.memo.MemoDto"/>
+    <fullyQualifiedTypeName name="model.sinsang2.SinDto"/>
+    <fullyQualifiedTypeName name="db.ajaxboard.AjaxBoardDto"/>
+    <fullyQualifiedTypeName name="oracle.db.DBConnect"/>
+    <fullyQualifiedTypeName name="db.simpleguest.SimpleGuestDto"/>
+    <fullyQualifiedTypeName name="db.self.SelfDto"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="member.model.MemberDto"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="myschool.model.MyschoolDto"/>
+    <fullyQualifiedTypeName name="oracle_db.DBConnect"/>
+    <fullyQualifiedTypeName name="model.membership.MembershipDto"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="db.simpleboard.SimpleBoardDto"/>
+    <fullyQualifiedTypeName name="db.quiz.QuizBoardDto"/>
+    <fullyQualifiedTypeName name="oracle.jdbc.proxy.annotation.Pre"/>
+    <fullyQualifiedTypeName name="data.dao.MemberDto"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="data.dto.GuestDto"/>
+    <fullyQualifiedTypeName name="data.dao.AnswerDao"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="data.dto.AnswerDto"/>
+    <fullyQualifiedTypeName name="javax.naming.spi.DirStateFactory.Result"/>
+    <fullyQualifiedTypeName name="data.dto.SmartDto"/>
+    <fullyQualifiedTypeName name="data.dto.MemberDto"/>
+    <fullyQualifiedTypeName name="data.dto.SmartAnswerDto"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="mysql.db.DBConnect"/>
+    <fullyQualifiedTypeName name="data.dto.ShopDto"/>
+    <fullyQualifiedTypeName name="data.dto.CartDto"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+
+        li{
+            list-style: none;
+        }
+        
+        .main{
+            float: left;
+            margin-right: 50px;            
+        }
+
+        /* 제목 3개 */
+        .main>a{
+            color: blue;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            width: 180px;
+            height: 30px;
+        }
+
+        .submenu{
+            font-size: 12pt; 
+            margin-top: 10px;
+        }
+
+        .submenu>li>a{
+            display: block;
+            width: 100px;
+            height: 10px;
+            color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="main">
+                <a href="#">7월 12일</a> <!-- #은 경로가 없다. 경로가 없다는 의미로 #을 기입해준다. -->
+                <ul class="submenu">
+                    <li>
+                        <a href="../day0712/ex1_htmlTag.html">1번 예제</a>
+                    </li>
+                    <li>
+                        <a href="../day0712/ex2_htmlTage.html">2번 예제</a>
+                    </li>
+                    <li>
+                        <a href="../day0712/quiz.html">퀴즈</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li class="main">
+                <a href="#">7월 13일</a> <!-- #은 경로가 없다. 경로가 없다는 의미로 #을 기입해준다. -->
+                <ul class="submenu">
+                    <li>
+                        <a href="../day0713/ex01_htmlTag.html">1번 예제</a>
+                    </li>
+                    <li>
+                        <a href="../day0713/ex04_listCheese.html">4번 예제</a>
+                    </li>
+                    <li>
+                        <a href="../day0713/ex06_cssClass.html">6번 예제</a>
+                    </li>
+                    <li>
+                        <a href="../day0713/ex09_lottoball.html">9번 예제</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li class="main">
+                <a href="#">7월 14일</a> <!-- #은 경로가 없다. 경로가 없다는 의미로 #을 기입해준다. -->
+                <ul class="submenu">
+                    <li>
+                        <a href="../day0714/ex03_table.html">3번 예제</a>
+                    </li>
+                    <li>
+                        <a href="../day0714/ex04_table.html">4번 예제</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

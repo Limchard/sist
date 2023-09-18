@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 70px;
+            height: 80px;
+            border: 1px solid gray;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>배열_초기값 지정</h3>
+    <script>
+        var arr1=["../연예인사진/14.jpg","../연예인사진/2.jpg","../만화이미지/03.png","../쇼핑몰사진/21.jpg","../만화이미지/14.png"];
+
+        var s="배열갯수: "+arr1.length+"<br>";
+
+        // for문
+        for(var i=0;i<arr1.length;i++){
+            s+="<img src='"+arr1[i]+"'>";
+        }
+
+        // 이미지 나타내기
+        document.write(s);
+    </script>
+
+    <br><hr><br>
+
+    <script>
+        var arr2=new Array(5);
+
+        // Food 폴더의 이미지 5개 0~4까지 지정하시고 출력
+
+        var arr2=["../day0712/Food/3.jpg","../day0712/Food/11.jpg","../day0712/Food/1.jpg","../day0712/Food/2.jpg","../day0712/Food/6.jpg"]
+
+        for(var i=0;i<arr2.length;i++){
+            document.write("<img src='"+arr2[i]+"'>");
+        }
+
+    </script>
+
+    <h3>배열 new Array로 지정... push로 초기화 </h3>
+    <script>
+
+        var arr3=new Array();
+
+        arr3.push("../연예인사진/2.jpg");
+        arr3.push("../연예인사진/1.jpg");
+        arr3.push("../연예인사진/4.jpg");
+        arr3.push("../연예인사진/12.jpg");
+        arr3.push("../연예인사진/14.jpg");
+        arr3.push("../연예인사진/15.jpg");
+
+
+        
+        var s="배열갯수: "+arr3.length+"<br>";
+
+        for(var i=0;i<arr3.length;i++){
+            s+="<img src='"+arr3[i]+"'>";
+        }
+
+      
+
+        document.write(s);
+
+        // console.arr3();
+
+
+    </script>
+
+<h3>배열_Array로 지정... pop으로 2개 삭제후 출력</h3>
+    <script>
+        arr3.pop();
+        arr3.pop();
+
+        document.write("배열 갯수: "+arr3.length+"<br>");
+
+        for(var i=0;i<arr3.length;i++){
+            document.write("<img src='"+arr3[i]+"'>");
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

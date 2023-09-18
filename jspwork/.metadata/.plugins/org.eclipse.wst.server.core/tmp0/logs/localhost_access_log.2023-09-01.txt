@@ -1,0 +1,14 @@
+127.0.0.1 - - [01/Sep/2023:10:21:02 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/index.jsp HTTP/1.1" 200 6548
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/menu/css/font-awesome.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/image/spring/s1.webp HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/menu/js/jquery.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/menu/css/menu.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/menu/js/function.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/image/cat/4.jpg HTTP/1.1" 200 416353
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/image/cat/2.jpg HTTP/1.1" 200 320729
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/image/cat/3.jpg HTTP/1.1" 200 241863
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/image/cat/1.jpg HTTP/1.1" 200 192346
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/menu/images/plus-gray.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /JspMiniProject/menu/images/patterns/light_toast.png HTTP/1.1" 404 874
+0:0:0:0:0:0:0:1 - - [01/Sep/2023:10:21:03 +0900] "GET /favicon.ico HTTP/1.1" 404 818

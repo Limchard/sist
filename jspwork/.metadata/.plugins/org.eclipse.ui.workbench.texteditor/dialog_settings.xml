@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="169"/>
+		<item key="DIALOG_Y_ORIGIN" value="425"/>
+	</section>
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="28"/>
+		<item key="DIALOG_Y_ORIGIN" value="74"/>
+		<item key="DIALOG_WIDTH" value="654"/>
+		<item key="DIALOG_HEIGHT" value="670"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="readUR"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="readur"/>
+			<item value="oncli"/>
+			<item value="image"/>
+			<item value="openFi"/>
+			<item value="readu"/>
+			<item value="url"/>
+			<item value="ㅕ기"/>
+			<item value="back"/>
+			<item value="color"/>
+			<item value="for"/>
+			<item value="aniam"/>
+			<item value="path"/>
+			<item value="ajax"/>
+			<item value="likes"/>
+			<item value="span.likes"/>
+		</list>
+		<list key="replacehistory">
+			<item value="form-group"/>
+			<item value="form-control"/>
+			<item value="***"/>
+			<item value="*"/>
+			<item value="#5ad2ff"/>
+			<item value="aqua"/>
+			<item value="#aaaaaa"/>
+			<item value="#828282"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1253"/>
+		<item key="DIALOG_Y_ORIGIN" value="139"/>
+		<item key="DIALOG_WIDTH" value="336"/>
+		<item key="DIALOG_HEIGHT" value="402"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+</section>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .small{
+            width: 90px;
+            border: 5px solid gray;
+            border-radius: 20px;
+            box-shadow: 10px 10px 10px 10px  gray;
+            margin: 5px;
+        }
+        .large{
+            width: 300px;
+            border: 10px groove gray;
+            border-radius: 30px;
+            box-shadow: 10px 10px 10px 10px gray;
+        }
+        .small2{
+            width: 120px;
+            border: 5px solid pink;
+            border-radius: 60px;
+            box-shadow: 10px 10px 10px 10px  gray;
+            margin: 10px;
+        }
+    </style>
+    <script>
+
+        /*  과제 기모링! (동영상 1:1 제출 ... gif로..)
+            1번 빼고는 모두 스크립트에서 한다
+            1. style 시트에 class 하나 만드세요 (addClass, removeClass 하기 위해) : 보더 둥글게, 섀도우
+            2. 작은이미지 사진에 쇼핑몰사진 1부터 10까지 차례대로 넣기(each)
+            3. 작은사진 너비,높이,보더 예쁘게 주기
+            4. 큰사진도 알아서 style sheet 이쁘게 주기  
+            5. 이벤트 : 작은 이미지에 마우스 올리면 큰사진에 나오게 한다. 
+                (작은 이미지에 마우스 올리면 1번의 addClass 주고, 벗어나면 원래대로)
+            */
+        $(function(){
+            $("img.large").each(function(idx){  // idx : index, element는 생략 된 상태
+                $(this).attr("src","../쇼핑몰사진/"+(idx+1)+".jpg")
+            });
+            $("img.small").each(function(idx){
+                $(this).attr("src","../쇼핑몰사진/"+(idx+1)+".jpg")        
+            });
+
+            $("img.small").mouseover(function(){
+                    smallImg=$(this).attr("src");
+                    $(this).addClass("small2");
+                    $("img.large").attr("src",smallImg);
+                })
+            $("img.small").mouseout(function(){
+                $(this).removeClass("small2")
+            })
+    });
+
+    </script>
+</head>
+<body>
+    <h3>0724과제물_10개 이상의 이미지 태그에 each문으로 사진넣기</h3>
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <br><br>
+    <img src="" class="large">
+
+</body>
+</html>

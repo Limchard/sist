@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+// 페이지의 모든요소가 로드되어야 호출...
+// html 로딩이 끝나야 아래 코드가 시작이 된다.
+      window.onload=function(){ // 모든것이 load가 끝난 다음에 동작을 하겠다. 라는 뜻
+// dom객체(document, object, model) : JavaScript 문을 html에 가져와 실행 시 순서에 따라 결과값이 달라진다. 
+// body에서 시작해야 하는 명령어가 head 단에서 시행이 안되면 window.onb
+
+      var list='';
+      
+      list+='<ul>';
+      list+='<li>Java</li>';
+      list+='<li>JavaScript</lt>';
+      list+='</ul>';
+
+      // document.write(list);
+      // html문서의 body태그에 list를 넣어줄께요.
+      // document.body.innerHTML=list;
+
+      document.getElementById('out').innerHTML=list; // id요소값을 찾아서 
+      //엘리먼트를 통해 찾아와야 한다.
+
+      // out.innerHTML=list;
+    }
+
+    </script>
+</head>
+<body>
+  <div id="out">결과</div> <!-- script의 내용이 이 결과가 나오기 전에 바로 실행을 해버려셔.. 결과값이 나오지 않는다. -->
+
+  
+
+</body>
+</html>

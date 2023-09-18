@@ -1,0 +1,208 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="/Users/imhyeongjun/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="23.2.0.0.0">
+			<jar fileName="/Users/imhyeongjun/Desktop/sist0615/utill/ojdbc11.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="com.mysql.cj.jdbc.Driver" name="MySQL Connector/J" type="MYSQL" version="mysql-connector-j-8.1.0 (Revision: 7b6f9a337afe6ccb41823df485bf848ca7952b09)">
+			<jar fileName="/Users/imhyeongjun/Desktop/sist0615/utill/mysql-connector-j-8.1.0.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:/Users/imhyeongjun/.p2/pool/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/.p2/pool/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>oracle_scott</name>
+			<username>scott</username>
+			<password>tiger</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:XE</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/Desktop/sist0615/utill/ojdbc11.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>SCOTT</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select * from ajaxboard</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>mysql_scott</name>
+			<username>scott</username>
+			<password>tiger</password>
+			<prompt>false</prompt>
+			<connect>jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>com.mysql.cj.jdbc.Driver</driver>
+			<type>MYSQL</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/Desktop/sist0615/utill/mysql-connector-j-8.1.0.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>coffee</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select name from test1</queryString>
+				</query>
+				<query>
+					<queryString>select * from test1</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>mysql_coffee</name>
+			<username>root</username>
+			<password>dla570426</password>
+			<prompt>false</prompt>
+			<connect>jdbc:mysql://localhost:3306/coffee?serverTimezone=Asia/Seoul</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>com.mysql.cj.jdbc.Driver</driver>
+			<type>MYSQL</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>/Users/imhyeongjun/Desktop/sist0615/utill/mysql-connector-j-8.1.0.jar</driverLocation>
+			<Other_Schemas schemaRule="useSelected">
+				<schema>coffee</schema>
+			</Other_Schemas>
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>delete from idx where num=2</queryString>
+				</query>
+				<query>
+					<queryString>delete from idx where num=3</queryString>
+				</query>
+				<query>
+					<queryString>delete from idx where num=4</queryString>
+				</query>
+				<query>
+					<queryString>create table spmember(num smallint auto_increment primary key,id varchar(20),
+pass varchar(20),name varchar(20),hp varchar(20),photo varchar(50),gaip date)</queryString>
+				</query>
+				<query>
+					<queryString>insert into spmember values(null,'scott','1234','메붕이','010-1111-2222','../img/noimage.png',now())</queryString>
+				</query>
+				<query>
+					<queryString>delete from spmember where num=5</queryString>
+				</query>
+				<query>
+					<queryString>delete from spmember where num=4</queryString>
+				</query>
+				<query>
+					<queryString>delete from spmember where num=3</queryString>
+				</query>
+				<query>
+					<queryString>delete from spmember where num=2</queryString>
+				</query>
+				<query>
+					<queryString>delete from spmember where num=1</queryString>
+				</query>
+				<query>
+					<queryString>select * from spmember</queryString>
+				</query>
+				<query>
+					<queryString>insert into spmember values(null,'scott','1234','이미자','010-4587-5870','../img/noimage.png',now())</queryString>
+				</query>
+				<query>
+					<queryString>create table membership (num smallint auto_increment primary key, id varchar(20),pw int(20),name varchar(20),
+birth varchar(20),gender varchar(10),race varchar(20),mail varchar(20),hp varchar(20),gaip date)</queryString>
+				</query>
+				<query>
+					<queryString>create table membership (num smallint auto_increment primary key, id varchar(20),pw varchar(20),name varchar(20),
+birth varchar(20),gender varchar(10),race varchar(20),mail varchar(20),hp varchar(20),gaip date)</queryString>
+				</query>
+				<query>
+					<queryString>insert into membership values(null,'qwer','1234','망고','1999-01-01','남자','내국인','mango@sist.com','010-1111-2222',now())</queryString>
+				</query>
+				<query>
+					<queryString>create table membership(
+num int not null auto_increment primary key,
+id varchar(20) not null,
+pass varchar(30) not null,
+name varchar(20) not null,
+birth varchar(30) not null,
+gender varchar(20) not null,
+race varchar(20) not null,
+mail varchar(50) not null,
+addr varchar(50) not null,
+gaip date)</queryString>
+				</query>
+				<query>
+					<queryString>drop table membership</queryString>
+				</query>
+				<query>
+					<queryString>create table membership(
+num int not null auto_increment primary key,
+id varchar(20) not null,
+pass varchar(30) not null,
+name varchar(20) not null,
+hp varchar(50) not null,
+birth varchar(30) not null,
+gender varchar(20) not null,
+race varchar(20) not null,
+mail varchar(50) not null,
+addr varchar(50) not null,
+gaip date)</queryString>
+				</query>
+				<query>
+					<queryString>insert into membership values(null,'qwer','1234','망고','1999-01-01','남자','내국인','mango@sist.com','010-1111-2222','서울특별시 관악구',now())</queryString>
+				</query>
+				<query>
+					<queryString>select max(num) from simpleboard</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

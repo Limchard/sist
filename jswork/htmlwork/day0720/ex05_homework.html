@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. 만화이미지 01.png~10.png 까지 출력하세요 (for문 이용) -->
+
+    <script>
+        var ani=["../만화이미지/01.png",
+        "../만화이미지/02.png",
+        "../만화이미지/03.png",
+        "../만화이미지/04.png",
+        "../만화이미지/05.png",
+        "../만화이미지/06.png",
+        "../만화이미지/07.png",
+        "../만화이미지/08.png",
+        "../만화이미지/09.png",
+        "../만화이미지/10.png",]
+
+        var s="배열갯수: "+ani.length+"<br>";
+
+        for(var i=0;i<ani.length;i++){
+            s+="<img width=30px src='"+ani[i]+"'>";
+        }
+        document.write(s);
+
+
+    </script>
+<br><hr><br>
+
+    <!-- 2. 음식사진 1.jpg를 img태그로 나타낸후 id를 img1으로 주고 그 아이디로 이벤트를 추가합니다. 
+        사진에 마우스를 올리면 3.jpg로 바뀌고 클릭하면 5.jpg 로 바뀌어 
+        마우스를 벗어나면 다시 원래사진으로 돌아가게 이벤트 주기 -->
+
+        <img src="../day0712/Food/1.jpg" width="200" id="img1" 
+        onmouseover="this.src='../day0712/Food/3.jpg'" 
+        onmouseout="this.src='../day0712/Food/1.jpg'"
+        onclick="this.src='../day0712/Food/5.jpg'">
+
+        
+
+<br><hr><br>
+    <!-- 3. img로 width=200 height=180으로 사진(아무거나) body에 넣은 후
+         이미지를 클릭하면 아래 div태그안에 각종정보(src,width,height)를 얻어서 출력하시오
+         (getAttribute,innerHWTML 사용) -->
+
+         <img src="../만화이미지/15.png" width="200" height="180" id="img3">
+        
+         <style>
+             #result1{
+                    top: 500px;
+                    width: 200px;
+                    height: 100px;
+                    border: 5px inset pink;
+                    padding: 20px;
+                    border-radius: 20px;
+            } 
+         </style>
+         <div id="result1"></div>
+
+         <script>
+
+            var i3=document.getElementById("img3")
+            var w=document.getElementById("result1")
+            i3.onclick=function(){               
+                w.innerHTML=i3.getAttribute("src")+"<br>";
+                w.innerHTML+=i3.getAttribute("width")+"<br>";
+                w.innerHTML+=i3.getAttribute("height")+"<br>";
+                
+            }
+            
+         </script>
+         
+         <br><hr><br>
+
+    <!-- 4. 버튼을 하나 만든후 클릭하면 prompt창에 이름을 입력받아서
+         div태그안에 "내이름은 *** 입니다." 라고 출력하세요 
+         (div에 class="bts" 라고 준 후 css로 예쁘게 스타일 적용할것!!!) -->
+
+       
+        <button type="button" id="btn">버튼</button>
+        <div class="bts" id="out"></div>
+            <style>
+                .bts{
+                    margin-top: 20px;
+                    width: 200px;
+                    height: 50px;
+                    border: 5px solid gray;
+                    background-color: gold;
+                    padding: 20px;
+                    border-radius: 20px;
+                }
+            </style>
+            
+            <script>
+                document.getElementById("btn").onclick=function(){                
+                    var name=prompt("이름을 입력하세요.");
+                    out.innerHTML=("내 이름은 "+name+"입니다.");
+
+                }
+            </script>
+            
+</body>
+</html>

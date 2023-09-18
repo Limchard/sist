@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Moirai+One&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>Insert title here</title>
+<style>
+	div.memo{
+		position: absolute;
+		/* border: 1px solid gray; */
+		font-size: 1.4em;
+		font-family: Nanum Pen Script;
+	}
+	div.button{
+		left: 150px;
+		top: 30px;
+		width: 400px;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+	}
+	div.addform{
+		left: 100px;
+		top: 150px;
+		width: 500px;
+		height: 500px;
+		padding: 20px 20px;
+	}
+	div.updateform{
+		left: 100px;
+		top: 150px;
+		width: 500px;
+		height: 500px;
+		padding: 20px 20px;
+	}
+	div.list{
+		left: 700px;
+		top: 100px;
+		width: 600px;
+		height: 700px;
+		padding: 20px 20px;
+	}
+	img.avata{
+		cursor: pointer;
+	}
+	img.select{
+		border: 2px solid pink;
+	}
+	span.writeday{
+		float: right;
+		color: #bbb;
+	}
+	span.writer{
+		font-weight: bold;
+	}
+	span.mod{
+		margin-left: 200px; cursor: pointer;
+	}
+	span.del{
+		cursor: pointer;
+	}
+	
+</style>
+<script>
+	$(function(){
+		// 처음 로딩이 되었을 때 목록이 출력되도록 합시다.
+		list(); // 단순 list(); 함수 불러오기 
+		$("div.addform").hide();
+		$("div.updateform").hide();
+		
+		// btnadd 누르면 addform 나타나기
+		$("#btnadd").click(function(){
+			$("div.addform").slideToggle('slow'); // 클릭 시 나타났다 사라졌다 
+		})
+		
+		// 아바타 2번인덱스에 select class 추가
+		$("img.avata").eq(2).addClass("select"); // 초기셋팅 (분홍box 처리 )
+		// 아바타의 2번 인덱스의 src값을 얻어서 input tag에 넣어줘야 한다.
+		$("#avata").val($("img.avata").eq(2).attr("src")); // hidden 처리한 곳에 value값(src) 을 추가함 (나중에 db에 넣기 위해)
+		
+		// 아바타 선택하면 값 변경되기 -> 아바타에 선택되어 있는 box가 선택한 곳으로 이동 	 
+		$("img.avata").click(function(){
+			$(this).addClass("select");
+			$(this).siblings().removeClass("select");
+			$("#avata").val($(this).attr("src"));
+		})
+		
+		// 수정폼의 아바타선택하면 값 변경되기 
+		$("img.uavata").click(function(){
+			$(this).addClass("select");
+			$(this).siblings().removeClass("select");
+			$("#uavata").val($(this).attr("src"));
+		})
+		
+		// 저장(insert).. 추가 성공시 다시 list(); 호출해야 한다.
+		$("td.dbsave").click(function(){
+			var data=$("#addform").serialize();
+			// alert(data);
+			
+			$.ajax({
+				type:"post", // url 노출되어 있고, 대용량 파일의 경우 post가 유리. 특히 파일 upload는 무조건 post 사용해야 합니다.
+				url:"memoinsert.jsp",
+				dataType:"html",
+				data:data,
+				success:function(res){
+					// 추가 성공시 다시 목록 출력 
+					list(); 
+					// 입력값 지우기 (초기화)
+					$("#writer").val("");
+					$("#story").val("");
+					
+					// 선택된 아바타 클래스 제거
+					$("img.avata").removeClass("select");
+					$("img.avata").eq(2).addClass("select");
+					$("#avata").val($("img.avata").eq(2).attr("src"));
+				}
+			})
+		})
+		
+		// 삭제 이벤트 
+		$(document).on("click","span.del",function(){ // 동적 메서드 사용. 처음부터 있던 form이 아니라, 이벤트로 생겨난 곳에 '삭제' 가 있기 때문이다.
+			var num=$(this).attr("num");
+			// alert(num);
+			
+			$.ajax({
+				type:"get",
+				url:"memodelete.jsp",
+				dataType:"html",
+				data:{"num":num},
+				success:function(){
+					list();
+				}
+			});	
+		}); 
+		
+		// list의 수정버튼 
+		$(document).on("click","span.mod",function(){
+			var num=$(this).attr("num");
+			// alert(num);
+			
+			// 수정폼의 unum에 num(seq)을 넣어야 한다.
+			$("#unum").val(num);
+			
+			$.ajax({
+				type:"get",
+				url:"memoGetData.jsp",
+				dataType:"json",
+				data:{"num":num},
+				success:function(res){
+					// 수정폼 태그 안에 넣어주기 (json으로 띄어주기)
+					$("#unum").val(res.num);
+					$("#uwriter").val(res.writer);
+					$("#ustory").val(res.story);
+					$("#uavata").val(res.avata);
+					
+					list();
+					
+					// 해당 이미지 (res에서 넘어온 이미지)의 select클래스 추가하기 
+					$("img.uavata").each(function(i,ele){
+						if($(this).attr("src")==res.avata){
+							$(this).addClass("select");
+						} else {
+							$(this).removeClass("select");
+						}
+					});
+					// 추가폼이 있다면 숨기고, 수정폼을 나타낸다. (값을 다 띄우고 가장 마지막에 한다.)
+					$("div.addform").hide();
+					$("div.updateform").show();
+				}
+			});
+		});
+		
+		$("td.dbupdate").click(function(){
+			var data=$("#updateform").serialize();
+			// alert(data);
+			
+			$.ajax({
+				type:"post", // url 노출되어 있고, 대용량 파일의 경우 post가 유리. 특히 파일 upload는 무조건 post 사용해야 합니다.
+				url:"memoUpdate.jsp",
+				dataType:"html",
+				data:data,
+				success:function(res){
+					// 추가 성공시 다시 목록 출력 
+					list(); 
+					// 입력값 지우기 (초기화)
+					$("#uwriter").val("");
+					$("#ustory").val("");
+					
+					// 선택된 아바타 클래스 제거
+					$("img.uavata").removeClass("select");
+					$("img.uavata").eq(2).addClass("select");
+					$("#uavata").val($("img.uavata").eq(2).attr("src"));
+				}
+			})
+			// $("div.addform").show();
+			$("div.updateform").hide();
+		});
+		
+	});
+	
+	// 사용자 함수는 $(fucntion(){}) 에 넣으면 안된다.
+	// 대표적인 사용자 함수.. list
+	function list(){
+		
+		$.ajax({
+			type:"get",
+			dataType:"json",
+			url:"memolist.jsp",
+			success:function(data){
+				// alert(data.length);
+				var s="";
+				if(data.length==0){
+					s+="<h3 class='alert alert-info'>저장된 메모가 없습니다.</h3>"
+				} else {
+					$.each(data,function(i,ele){ // json은 배열로 값이 넘어온다. 
+						s+="<table class='table'>";
+						s+="<tr><td>";
+						s+="<span class='writer'>작성자: "+ele.writer+"</span>";
+						s+="<span class='writeday'>"+ele.writeday+"</span>";
+						s+="<span class='mod' num="+ele.num+" style='color: cornflowerblue;'>수정 |</span>";
+						s+="<span class='del' num="+ele.num+" style='color: pink;'> 삭제</span>";
+						s+="<br>";
+						s+="<pre>"+ele.story;
+						s+="<img src='"+ele.avata+"' align='right' width='80'>";
+						s+="</pre>";
+						s+="</td></tr>";
+						s+="</table><br>";
+					});
+				}
+				$(".list").html(s);
+			}
+		})
+	}
+	
+</script>
+</head>
+<body>
+	<div class="memo button">
+		<button type="button" class="btn btn-info" id="btnadd">메모추가</button>
+	</div>
+	
+	<div class="memo addform">
+		<form id="addform"> <!-- action은 action페이지로 넘어가서 redirect 하는 방식이다. ajax에서는 사용 안한다.-->
+			<table class="table table-bordered">
+				<tr>
+					<th style="width: 120px; background-color: #e0ffff;">작성자</th>
+					<td>
+						<input type="text" class="form-control" name="writer" id="writer" style="width: 120px;">
+					</td>
+				</tr>
+				<tr>
+					<th style="width: 120px; background-color: #e0ffff;">메모</th>
+					<td>
+						<textarea class="form-control" name="story" id="story" style="width: 270px; height: 150px;"></textarea> <!-- 수정은 >< 사이에다가 해야한다. --> 
+					</td>
+				</tr>
+				<tr>
+					<th style="width: 120px; background-color: #e0ffff;">아바타</th>
+					<td>
+						<input type="hidden" name="avata" id="avata"> <!-- 이미지로 나타난다. 굳이 글씨가 나올 필요가 없으니까 hidden을 사용한다. // db주소에 넘기기 위해 가상의 공간을 만들어 놓았다고 생각하자. -->
+						<script>
+							// 아바타 10개 넣기 
+							var s="";
+							for(var i=1;i<=10;i++){
+								s+="<img src='../img/avata/b"+i+".png' width='50' class='avata'>";
+								if(i==5){
+									s+="<br>";
+								}
+							}
+							document.write(s);
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" style="cursor: pointer; background-color: #e0ffff;" class="dbsave">
+						DB에 저장하기	
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+	<div class="memo updateform">
+		<form id="updateform"> <!-- action은 action페이지로 넘어가서 redirect 하는 방식이다. ajax에서는 사용 안한다.-->
+		<!-- hidden 값 넣어주기. (받아온 seq값. ) ) -->
+		<input type="hidden" name="unum" id="unum" > <!-- 수정폼의 name,id와 update폼의 name,id는 달라야 한다. -->
+		<!-- // value가 없으므로 id나 name을 통해서 값을 받아와야 한다. -->
+			<table class="table table-bordered">
+				<tr>
+					<th style="width: 120px; background-color: #e0ffff;">작성자</th>
+					<td>
+						<input type="text" class="form-control" name="uwriter" id="uwriter" style="width: 120px;">
+					</td>
+				</tr>
+				<tr>
+					<th style="width: 120px; background-color: #e0ffff;">메모</th>
+					<td>
+						<textarea class="form-control" name="ustory" id="ustory" style="width: 270px; height: 150px;"></textarea> <!-- 수정은 >< 사이에다가 해야한다. --> 
+					</td>
+				</tr>
+				<tr>
+					<th style="width: 120px; background-color: #e0ffff;">아바타</th>
+					<td>
+						<input type="hidden" name="uavata" id="uavata"> <!-- 이미지로 나타난다. 굳이 글씨가 나올 필요가 없으니까 hidden을 사용한다. // db주소에 넘기기 위해 가상의 공간을 만들어 놓았다고 생각하자. -->
+						<script>
+							// 아바타 10개 넣기 
+							var s="";
+							for(var i=1;i<=10;i++){
+								s+="<img src='../img/avata/b"+i+".png' width='50' class='uavata'>";
+								if(i==5){
+									s+="<br>";
+								}
+							}
+							document.write(s);
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" style="cursor: pointer; background-color: #e0ffff;" class="dbupdate">
+						DB에 수정하기	
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="memo list">list</div>
+</body>
+</html>

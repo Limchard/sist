@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buttonStyle.css">
+    <title>Document</title>
+    <style>
+        #out{
+            position: absolute;
+            left: 20px;
+            top: 70px;
+            width: 220px;
+            height: 230px;
+            background-color: aquamarine;
+            border: 1px solid gray;
+        }
+
+
+    </style>
+    <script>
+        /* 문제 1
+        window.onload=function(){
+            var ff=document.getElementById("btnf");
+            var yy=document.getElementById("btny");
+
+            ff.onclick=function(){
+                var img1="<img width=220 height=250 src='../day0712/Food/3.jpg'>"
+                var ans=confirm("정말 출력할까요?")
+                if(ans==1){
+                    out.innerHTML=img1
+                } else {
+                    out.innerHTML="취소되었습니다."
+                }
+            }
+            yy.onclick=function(){
+                var img2="<img width=220 height=250 src='../연예인사진/9.jpg'>"
+                var ans=confirm("정말 출력할까요?")
+                if(ans==1){
+                    out.innerHTML=img2
+                } else {
+                    out.innerHTML="취소되었습니다."
+                }
+            }    
+        }
+*/
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <!-- 버튼 2개에 하나는 food, 하나는 연예인 이라고 쓰고 css는 우리가 만든 buttonStyle에서 적용한다. -->
+    <!-- food 버튼을 클릭하면 음식사진을 div에 출력하고, 연예인을 클릭하면 연예인 한명을 출력한다. (단, 2번 모두 음식을 출력할까요? 라고 물어보고 예를 클릭시에만 이미지 출력한다.) -->
+
+    <!-- 문제 1
+    <button type="button" id="btnf" class="btn btn-black">음식</button>
+    <button type="button" id="btny" class="btn btn-pink">연예인</button>
+    -->
+    
+    
+    <div id="out"></div>
+
+    <!-- 문제.2 -->
+    <!-- 이미지 출력이라는 버튼을 만들고.. 클릭 시 promptfh "출력할 이미지의 index번호를 입력해주세요. 라고 출력" -->
+    <!-- 0번을 입력하면 0번 이미지가 출력(총 5 개의 이미지를 imgArr 이라는 배열 형태로 넣어놓고, 다양한 폴더의 이미지 5개 배열에 넣어 주세요) -->
+    <!-- 단, 배열인덱스에 없는 값 입력시 div에 "해당번호는 없습니다." 출력하기 -->
+
+    
+    <button type="button" onclick="writePromptImage()" id="btnA" class="btn btn-yellow">이미지 출력</button>
+    <script>
+        var imgArr=new Array();
+
+        imgArr.push("../html_img/cheese2.png");
+        imgArr.push("../logoImg/acc02.png");
+        imgArr.push("../만화이미지/06.png");
+        imgArr.push("../연예인사진/4.jpg");
+        imgArr.push("../jquery_img/06.png");
+
+        var result=document.getElementById("out");
+
+        function writePromptImage(){
+            var idx=prompt("출력할 이미지의 인덱스 번호를 입력해주세요");
+
+            if(idx<0|| idx>4){
+                result.innerHTML="해당번호는 없습니다.";
+            } else {
+                result.innerHTML="<img src='"+imgArr[idx]+"'>";
+            }
+        }
+    </script>
+</body>
+</html>
