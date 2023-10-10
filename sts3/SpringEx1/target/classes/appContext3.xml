@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+	<!-- SawonData 설정..... 사원명은 생성자주입, 나머지는 setter 주입 -->
+	<bean name="sData" class="spring.di.ex3.SawonData">
+		<constructor-arg value="민수"/>
+		<property name="pay" value="3000000"/>
+		<property name="ipsaday" value="2023년 06월 18일"/>
+		
+	</bean>
+	
+	<!-- Sawon 설정 -->
+	<bean name="sawon" class="spring.di.ex3.Sawon">
+		<constructor-arg ref="sData"></constructor-arg>
+	</bean>
+
+</beans>
