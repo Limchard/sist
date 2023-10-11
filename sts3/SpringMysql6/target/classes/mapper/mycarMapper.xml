@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="spring.mysql.mycar.MyCarDao"> <!-- namespace의 경우 겹쳐질까봐 이렇게 세세하게 쓰는거다. Dao로 써야 하는건 아니다.  -->
+<!-- <mapper namespace="mymycar"> --> <!-- 별명과 같은 거라서 'mycar' 처럼 간단하게 써도 된다. -->
+
+	<!-- 전체 리스트 -->
+	<select id="getAllListOfMyCar" resultType="mdto"> <!-- resultType : 반환타입 --> 
+	<!-- resultType(return값이라고 생각하자) 작성 시 packge까지 써야 합니다. 이걸 간단하게 하기 위해 mybatis에서 alias를 설정해준다. -->
+		select * from mycar order by num desc <!-- 여기서는 세미콜론 적으면 안된다. -->
+	</select>
+	
+	<!-- 전체 개수 얻기 -->
+	<select id="getTotalCountOfMyCar" resultType="int">
+		select count(*) from mycar
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertOfMyCar" parameterType="mdto">
+		insert into mycar (carname,carprice,carcolor,carguip) values(#{carname},#{carprice},#{carcolor},#{carguip})
+		<!-- # : mybatis ,$ : ibatis, -->
+	</insert>
+	
+	<delete id="deleteOfMyCar" parameterType="mdto">
+		delete from mycar where num=#{num}
+	</delete>
+		
+</mapper>

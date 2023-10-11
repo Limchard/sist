@@ -1,6 +1,14 @@
 package spring.mvc.tea;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.data.dto.ShopDto;
@@ -76,4 +85,100 @@ public class NaverController {
 		
 		return model;
 	}
+	
+	@GetMapping("/form4")
+	public String uploadForm1() {
+		
+		
+		return "upload/uploadForm1";
+	}
+	
+	
+	@PostMapping("/upload1")
+	public ModelAndView read1(@RequestParam String title,@RequestParam MultipartFile photo,HttpSession session) {
+		// HttpServletRequest 에 realPath 를 찾기 위해서 한다.
+		// MultipartFile photo 에서 photo는 uploadForm1의 name이다.
+		ModelAndView model=new ModelAndView();
+		
+		// 업로드할 실제 경로 구하기
+		String path=session.getServletContext().getRealPath("/WEB-INF/image");
+		String fileName=photo.getOriginalFilename(); // upload된 파일 명 
+		
+		// 사진 여러개 올리기 위해서 (현재 날짜와 시간 이용하여 파일명 겹치는거 방지하기)
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		
+		if(!fileName.equals("")) { // 파일 업로드 할 경우
+		// path에 업로드
+		fileName=sdf.format(new Date())+"_"+fileName;
+
+		try {
+			photo.transferTo(new File(path+"/"+fileName));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		} else {
+			fileName="no"; // 파일 업로드 안할경우
+		}
+		
+		model.addObject("fileName", fileName);
+		model.addObject("title", title);
+		model.addObject("path", path);
+		
+		model.setViewName("upload/uploadResult1");
+		
+		return model;
+	}
+	
+	// 여려개 업로드 하는 폼으로 이동
+	@GetMapping("/uploadform5")
+	public String uploadform5() {
+		
+		return "upload/uploadForm2";
+	}
+	
+	@PostMapping("/upload2")
+	public ModelAndView read2(@RequestParam String title,@RequestParam ArrayList<MultipartFile>photo,HttpSession session) {
+		// HttpServletRequest 에 realPath 를 찾기 위해서 한다.
+		// MultipartFile photo 에서 photo는 uploadForm2의 name이다.
+		ModelAndView model=new ModelAndView();
+		
+		// 업로드할 실제 경로 구하기
+		String path=session.getServletContext().getRealPath("/WEB-INF/image");
+		
+		// 사진 여러개 올리기 위해서 (현재 날짜와 시간 이용하여 파일명 겹치는거 방지하기)
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		
+		ArrayList<String> files=new ArrayList<String>();
+		
+		// 파일명 ArrayList에 담기
+		for(MultipartFile f:photo) {
+			String fileName=sdf.format(new Date())+"_"+f.getOriginalFilename();
+			files.add(fileName);
+			
+			// 업로드.
+			try {
+				f.transferTo(new File(path+"/"+fileName));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		model.addObject("files", files);
+		model.addObject("title", title);
+		model.addObject("path", path);
+		
+		model.setViewName("upload/uploadResult2");
+		
+		return model;
+	}
+	
 }
