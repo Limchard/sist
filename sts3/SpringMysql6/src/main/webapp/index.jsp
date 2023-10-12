@@ -13,6 +13,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:redirect url="kakao/list"/>
+	<%-- <c:redirect url="kakao/list"/> --%>
+	<button type="button" class="btn btn-info" style="width: 200px;" onclick="location.href='kakao/list'">자동차 정보 목록</button><br>
+	<button type="button" class="btn btn-success" style="width: 200px;" onclick="location.href='member/list'">자동차 정보 구입 고객 명단</button><br>
+	
 </body>
 </html>

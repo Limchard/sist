@@ -49,10 +49,7 @@
 					<button type="button" class="btn btn-danger" onclick="location.href='delete?num=${dto.num}'">삭제</button>
 				</td>
 			</tr>
-		
-		
 		</c:forEach>
-	
 	</table>
 	
 </body>

@@ -35,8 +35,20 @@ public class MyCarDao {
 	}
 	
 	// delete
-	public void deleteCar(MyCarDto dto) {
-		session.delete("deleteOfMyCar", dto);
+	public void deleteCar(String num) {
+		session.delete("deleteOfMyCar", num);
 	}
 	
+	// update를 위해 항목 찾기
+	public MyCarDto getData(String num) {
+		
+		return session.selectOne("selectOneOfMyCar", num);
+	}
+	
+	// update 하기
+	public void updateCar(MyCarDto dto) {
+		session.update("updateOfMyCar", dto);
+	}
+	
+		
 }

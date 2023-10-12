@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
+  
 <mapper namespace="spring.mysql.mycar.MyCarDao"> <!-- namespace의 경우 겹쳐질까봐 이렇게 세세하게 쓰는거다. Dao로 써야 하는건 아니다.  -->
 <!-- <mapper namespace="mymycar"> --> <!-- 별명과 같은 거라서 'mycar' 처럼 간단하게 써도 된다. -->
 
@@ -23,8 +24,18 @@
 		<!-- # : mybatis ,$ : ibatis, -->
 	</insert>
 	
-	<delete id="deleteOfMyCar" parameterType="mdto">
+	<delete id="deleteOfMyCar" parameterType="String">
 		delete from mycar where num=#{num}
 	</delete>
-		
+	
+	<!-- update 2단계 -->
+	<!-- 1. 수정폼 나타내기 -->
+	<select id="selectOneOfMyCar" resultType="mdto" parameterType="String">
+		select * from mycar where num=#{num}
+	</select>
+	
+	<!-- 2. 수정하기 -->
+	<update id="updateOfMyCar" parameterType="mdto">
+		update mycar set carname=#{carname},carprice=#{carprice},carcolor=#{carcolor},carguip=#{carguip} where num=#{num}
+	</update>
 </mapper>

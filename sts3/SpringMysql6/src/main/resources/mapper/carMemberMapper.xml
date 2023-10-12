@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="carmember"> 
+
+<!-- 전체개수 구하기 -->
+	<select id="getTotalCountOfMember" resultType="int">
+		select count(*) from carmember;
+	</select>
+	
+	<!-- 전체 정보 select -->
+	<select id="getAllDataOfMember" resultType="cardto">
+		select * from carmember order by num desc
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertAllDataOfMember" parameterType="cardto">
+		insert into carmember values(null,#{name},#{hp},#{addr},now())
+	</insert>
+	
+	<!-- delete -->
+	<delete id="deleteOfMember" parameterType="String">
+		delete from carmember where num=#{num}
+	</delete>
+	
+	<!-- update 1 -->
+	<select id="getOneDataOfMember" parameterType="String" resultType="cardto">
+		select * from carmember where num=#{num}
+	</select>
+	
+	<!-- update 2 -->
+	<update id="updateOfMember" parameterType="cardto">
+		update carmember set name=#{name},hp=#{hp},addr=#{addr} where num=#{num}
+	</update>
+	
+
+</mapper>
+
