@@ -11,9 +11,9 @@
 	<insert id="insertOfMyInfo" parameterType="idto">
 		insert into myinfo(name,driver,addr,photo,gaipday) values(#{name},#{driver},#{addr},#{photo},now())
 	</insert>
-	<select id="selectAllOfMyInfo" resultType="idto">
+	<!-- <select id="selectAllOfMyInfo" resultType="idto">
 		select * from myinfo order by num
-	</select>
+	</select> -->
 	<select id="selectOneOfMyInfo" resultType="idto" parameterType="String">
 		select * from myinfo where num=#{num}
 	</select>
@@ -29,5 +29,20 @@
 	<delete id="deleteOfMyInfo" parameterType="String">
 		delete from myinfo where num=#{num}
 	</delete>
+	
+	
+	<!-- 검색 리스트 -->
+	<select id="selectAllOfMyInfo" resultType="idto" parameterType="Map">
+	<!-- parameterType의 경우 이름과 serch에서 각각 넘어와 총 2개가 넘어와야하므로 Map을 사용한다. -->
+		select * from myinfo
+		<if test="serch!=null">
+			where ${title} like concat('%',#{serch},'%') <!--  --> 
+			<!-- ${title} 이 의미하는 것은 column이다. -->
+			<!-- like('*',?,'*') 원래는 이렇게 썼었는데.. 
+				검색은 오른쪽처럼 쓴다. where {검색기준이 될 필드명} link concat('%',?,'%')
+			-->
+		</if>
+		order by num asc
+	</select>
 
 </mapper>

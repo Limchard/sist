@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -29,12 +31,19 @@ public class InfoController {
 	InfoInter inter;
 	
 	@GetMapping("/info/list")
-	public ModelAndView list() {
+	public ModelAndView list(@RequestParam(defaultValue = "name") String title, @RequestParam(required = false)String serch) {
 		
 		ModelAndView mview=new ModelAndView();
 		int totalCount=idao.getTotalCount();
 		
-		List<InfoDto> list=inter.getAllDataOfMyInfo();
+//		List<InfoDto> list=inter.getAllDataOfMyInfo();
+		System.out.println(title+","+serch);
+		
+		Map<String, String> map=new HashMap<String, String>();
+		map.put("serch", serch);
+		map.put("title", title);
+		
+		List<InfoDto> list=inter.getAllDataOfMyInfo(map);
 		
 		mview.addObject("count", totalCount);
 		mview.addObject("list",list);
@@ -101,13 +110,22 @@ public class InfoController {
 	}
 	
 	@PostMapping("/info/update")
-	public String update(@ModelAttribute InfoDto idto,@RequestParam MultipartFile upload,HttpSession session) {
+	public String update(@ModelAttribute InfoDto idto,@RequestParam MultipartFile upload,HttpSession session,String num) {
 		String path=session.getServletContext().getRealPath("/resources/image/");
 		System.out.println(path);
 		
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
 		
 		String photoname; // dto에 담을 변수
+				
+		// 기존사진삭제
+		String photo=inter.getData(num).getPhoto();
+				
+		if(!photo.equals("no")) {
+					
+			File file=new File(path+"/"+photo); // 이미지중에 내가 고른 사진
+			file.delete();
+		}
 		
 		// 사진 선택안할경우 null
 		if(upload.getOriginalFilename().equals("")) {
