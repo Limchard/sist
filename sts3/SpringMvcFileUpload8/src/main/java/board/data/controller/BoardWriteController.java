@@ -42,7 +42,7 @@ public class BoardWriteController {
 		System.out.println(currentPage+","+num);
 		
 		// 입력폼에 hidden으로 넣어줘야함.. 답글일때 대비
-		mview.addObject("currentPage)", currentPage==null?"1":currentPage); // 얘는 default 값을 1로 설정해줬음.
+		mview.addObject("currentPage", currentPage==null?"1":currentPage); // 얘는 default 값을 1로 설정해줬음.
 		mview.addObject("num", num==null?"0":num);
 		mview.addObject("regroup", regroup==null?"0":regroup);
 		mview.addObject("restep", restep==null?"0":restep);
@@ -56,12 +56,13 @@ public class BoardWriteController {
 	}
 	
 	@PostMapping("/board/insert")
-	public String insert(@ModelAttribute BoardDto bdto,@RequestParam ArrayList<MultipartFile>uimage,HttpSession session) {
+	public String insert(@ModelAttribute BoardDto bdto,@RequestParam ArrayList<MultipartFile>uimage,HttpSession session,
+			@RequestParam String currentPage) {
 		
 		// 실제경로 구하기
-		String path=session.getServletContext().getRealPath("WEB-INF/photo");
+		String path=session.getServletContext().getRealPath("/WEB-INF/photo");
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
-		
+		System.out.println(currentPage);
 		String photo="";
 		
 		if(uimage.get(0).getOriginalFilename().equals("")) {
@@ -90,7 +91,11 @@ public class BoardWriteController {
 		// insert
 		bdao.insertReboard(bdto);		
 		
-		return "redirect:list"; // content 일단 없어서 목록으로 이동.. 나중에 content로 경로 변경 예정.
+		
+		int maxNum=bdao.getMaxNum();
+		
+//		return "redirect:list"; // content 일단 없어서 목록으로 이동.. 나중에 content로 경로 변경 예정.
+		return "redirect:content?num="+maxNum+"&currentPage="+currentPage;
 	}
 	
 	

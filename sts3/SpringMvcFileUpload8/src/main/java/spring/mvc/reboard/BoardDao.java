@@ -73,8 +73,42 @@ public class BoardDao implements BoardDaoInter {
 		map.put("start", start);
 		map.put("perpage", perpage);
 		
-		
 		return session.selectList("selectPagingOfReboard", map);
 	}
-
+	
+	
+	@Override
+	public BoardDto getData(int num) {
+		// TODO Auto-generated method stub
+		return session.selectOne("getDataOfReboard", num);
+	}
+	
+	@Override
+	public void updateReadCount(int num) {
+		
+		session.update("plusReadCountOfReboard", num);
+	}
+	
+	@Override
+	public int getCheckPass(int num, int pass) {
+		// TODO Auto-generated method stub
+		HashMap<String, Integer>map=new HashMap<String, Integer>();
+		map.put("num", num);
+		map.put("pass", pass);
+		
+		return session.selectOne("checkPassEqualOfReboard", map);
+	}
+	
+	@Override
+	public void deleteReboard(int num) {
+		// TODO Auto-generated method stub
+		session.delete("deleteOfReboard", num);
+	}
+	
+	@Override
+	public void updateReboard(BoardDto bdto) {
+		// TODO Auto-generated method stub
+		session.update("updateOfReboard", bdto);
+		
+	}
 }

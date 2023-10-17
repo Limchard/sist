@@ -18,7 +18,7 @@
 		<caption align="top">
 			<b>스프링 답변형 게시판</b>
 				<span style="float: right;">
-					<button type="button" class="btn btn-outline-info" onclick="location.href='writeform'">글쓰기</button>
+					<button type="button" class="btn btn-outline-info" onclick="location.href='writeform?currentPage=${currentPage}'">글쓰기</button>
 				</span>
 		</caption>
 		
@@ -69,10 +69,8 @@
 		</c:if>
 	</table>	
 
-
 <!-- 페이지번호 출력 -->
-	
-	
+
 	<c:if test="${totalCount>0 }">
 		<div style="width: 800px; text-align: center;">
 			<ul class="pagination justify-content-center">
