@@ -56,6 +56,11 @@
 						<!-- 제목.. 여기 누르면 내용 보기로 갈꺼다! -->
 						<a href="content?num=${bdto.num }&currentPage=${currentPage}">${bdto.subject }</a>
 						
+						<!-- 댓글개수 표시하기 -->
+						<c:if test="${bdto.acount>0 }">
+							<a style="color: red;" href="content?num=${bdto.num }&currentPage=${currentPage}#answer">[${bdto.acount }]</a>
+						</c:if>
+						
 						<!-- 사진이 있을경우 아이콘 표시 -->
 						<c:if test="${bdto.photo!='no' }">
 							<i class="bi bi-image"></i>
@@ -104,6 +109,7 @@
 			</ul>
 		</div>			
 	</c:if>
+	
 	
 </div>
 </body>

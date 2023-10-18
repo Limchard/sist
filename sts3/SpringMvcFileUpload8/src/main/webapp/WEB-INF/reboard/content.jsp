@@ -42,6 +42,41 @@
 				</c:if>
 			</td>
 		</tr>
+		
+		<!-- 댓글 -->
+		
+		<tr>
+			<td>
+				<div id="answer">
+					<b>댓글: ${acount }</b><br><br>
+					<c:forEach var="a" items="${alist }">
+						${a.nickname }: ${a.contents } 
+						<span style="color: gray;font-size: 0.8em;">
+							<fmt:formatDate value="${a.writeday }" pattern="yyyy-MM-dd HH:mm"/>
+						</span>
+						&nbsp;
+						<i class="adel bi bi-eraser" style="color: red; cursor: pointer;" idx="${a.idx }"></i>
+						<br>
+					</c:forEach>
+				</div>
+				<form action="ainsert" method="post">
+					<input type="hidden" name="num" value="${bdto.num }">
+					<input type="hidden" name="currentPage" value="${currentPage }"> 
+					<div class="d-inline-flex">
+						<b>닉네임: </b>
+						<input type="text" name="nickname" class="form-control" style="width: 120px;" required="required">
+						&nbsp;&nbsp;<b>비밀번호: </b>
+						<input type="password" name="pass" class="form-control" style="width: 120px;" required="required">
+					</div>
+					<br><br>
+					<div class="d-inline-flex">
+						<input type="text" name="contents" class="form-control" style="width: 500px;" placeholder="댓글내용을 입력하세요">
+						<button type="submit" class="btn btn-outline-info">확인</button>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
 		<tr>
 			<td align="right">
 				<button type="button" class="btn btn-info" onclick="location.href='writeform'" style="width: 100px;">글쓰기</button>
@@ -53,6 +88,37 @@
 		</tr>
 	</table>
 </div>
+	
+<script type="text/javascript">
+	
+	$("i.adel").click(function(){
+		var idx=$(this).attr("idx");
+		var pass=prompt("비밀번호를 입력하세요","비밀번호");
+		if(pass==null){
+			return;
+		}
+ 		// alert(idx);
+		// alert(pass);
+  		$.ajax({
+			type:"get",
+			dataType:"json",
+			url:"adelete",
+			data:{"pass":pass,"idx":idx},
+			success:function(res){
+				
+				if(res.check==0){
+					alert("비밀번호가 맞지 않습니다.")
+				} else {
+					alert("댓글을 삭제합니다.");
+					location.reload();
+				}	
+			}
+		}); 
+	});
+	
+</script>
+	
+	
 	
 </body>
 </html>

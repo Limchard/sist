@@ -12,16 +12,19 @@ public class BoardDto {
 	private String content;
 	private String photo;
 	private int readCount;
-	public int getReadCount() {
-		return readCount;
-	}
-	public void setReadCount(int readCount) {
-		this.readCount = readCount;
-	}
 	private int regroup;
 	private int restep;
 	private int relevel;
 	private Timestamp writeday;
+	private int acount;
+	
+	
+	public int getAcount() {
+		return acount;
+	}
+	public void setAcount(int acount) {
+		this.acount = acount;
+	}
 	public int getNum() {
 		return num;
 	}
@@ -82,7 +85,12 @@ public class BoardDto {
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
 	}
-	
+	public int getReadCount() {
+		return readCount;
+	}
+	public void setReadCount(int readCount) {
+		this.readCount = readCount;
+	}
 	 
 	
 	
