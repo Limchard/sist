@@ -23,6 +23,4 @@
 		delete from reanswer where idx=#{idx}
 	</delete>
 	
-	
-	
 </mapper>

@@ -20,7 +20,6 @@ public class AnswerDao implements AnswerDaoInter {
 		session.insert("insertOfReanswer", adto);
 	}
 	
-	
 	@Override
 	public List<AnswerDto> getAnswerList(int num) {
 		// TODO Auto-generated method stub
