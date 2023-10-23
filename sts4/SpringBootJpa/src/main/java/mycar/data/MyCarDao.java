@@ -3,6 +3,7 @@ package mycar.data;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -25,7 +26,8 @@ public class MyCarDao {
 	// select
 	public List<MyCarDto> getAllData(){
 		
-		return carInter.findAll();
+		// return carInter.findAll();
+		return carInter.findAll(Sort.by(Sort.Direction.ASC, "carprice")); // 가격이 낮은것 부터 오름차순!! 
 	}
 	
 	// update하기

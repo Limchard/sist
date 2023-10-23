@@ -39,4 +39,7 @@ public class MyCarDto {
 	@Column(updatable = false) // 업데이트시에 이 컬럼은 수정하지 않겠다. 이게 없으면 값이 null로 들어간다(자동 업데이트). updateform에 해당 guipday를 기입하지 않기 때문이다.
 	private Timestamp guipday;
 	
+	@Column
+	private String carphoto;
+	
 }

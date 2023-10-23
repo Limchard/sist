@@ -15,7 +15,7 @@
 <body>
 
 <div style="margin: 100px 100px; width: 500px;">
-	<form action="insert" method="post">
+	<form action="insert" method="post" enctype="multipart/form-data">
 		<table class="table table-bordered">
 			<tr>
 				<th>자동차명</th>
@@ -41,6 +41,16 @@
 					<input type="date" name="carguip" class="form-control" style="width: 200px;" value="2023-10-01">
 				</td>
 			</tr>
+			
+			<!-- 파일 업로드의 경우 이름과 dto가 같다고 해서 바로 올라가는게 아니다.. -->
+			<!-- 이름을 똑같이 할 경우 오류 찾기가 어려워,, 구분을 위해 dto name과 여기 input의 Name을 다르게 준다. -->
+			<tr>
+				<th>자동차 이미지</th>
+				<td>
+					<input type="file" name="carupload" class="form-control" style="width: 200px;" required="required">
+				</td>
+			</tr>
+
 			<tr>
 				<td colspan="2" align="center">
 					<button type="submit" class="btn btn-outline-info">저장</button>

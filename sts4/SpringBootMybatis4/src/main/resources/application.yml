@@ -1,0 +1,33 @@
+# tomcat port
+server:
+  port: 9020
+
+# jsp
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+
+  devtools:
+    livereload:
+      enabled: true
+      
+#mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springframework?serverTimezone=Asia/Seoul
+    username: root
+    password: dla570426
+# project에 대한 기본 정보값들을 담아두는 것이다.
+
+# mybatis mapper 등록!
+mybatis:
+  type-aliases-package: data.model.* # 이건 사실 dao 이고.. Spring boot에서는 주로 mapper라는 표현을 쓰기 때문에 mapper라고 표현한거다.
+  #type-aliases-package: data.model.dto,data.model.mapper,
+  mapper-locations: # mapper에 오는 실제 xml 파일들을 위치할 것이다.
+  - /mapper/**/*.xml # 이게 Spring framework에 있었던 mapper이다.. 
+  
+  
+  # sql문과 dao를 연결해주는것을 @Mapper 라는걸 쓴다... 기존에 파일 이름을 mapper 라고 한것은 그냥 단순히 보기 편하라고..
+  
