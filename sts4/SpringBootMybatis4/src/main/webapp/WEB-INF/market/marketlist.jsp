@@ -30,10 +30,11 @@
 	<table class="table table-bordered" style="width: 800px;">
 		<caption align="top"><b>상품 목록</b></caption>
 		<tr>
-			<th width="100">번호</th>
+			<th width="50">번호</th>
 			<th width="300">상품명</th>
 			<th width="150">가격</th>
 			<th width="150">입고날짜</th>
+			<th width="300">수정|삭제</th>
 		</tr>
 		<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr>
@@ -50,6 +51,10 @@
 				</td>
 				<td><fmt:formatNumber value="${dto.price }" type="currency"/></td>
 				<td><fmt:formatDate value="${dto.ipgoday }" pattern="yyyy.MM.dd"/></td>
+				<td>
+					<button type="button" class="btn btn-outline-warning" onclick="location.href='updateform?num=${dto.num}'">상품수정</button>
+					<button type="button" class="btn btn-outline-danger" onclick="location.href='delete?num=${dto.num}'">상품삭제</button>
+				</td>
 			</tr>
 		</c:forEach>
 		

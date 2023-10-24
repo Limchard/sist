@@ -88,7 +88,26 @@ public class MyCarController {
 	
 	// update	
 	@PostMapping("/updatecar")
-	public String updatecar(@ModelAttribute("dto") MyCarDto dto) {
+	public String updatecar(@ModelAttribute MyCarDto dto,
+			MultipartFile carupload,
+			HttpSession session) {
+		
+		// 업로드할 save 위치 구하기
+ 			String path=session.getServletContext().getRealPath("/save");
+				
+			// 업로드한 파일 dto얻기 
+			dto.setCarphoto(carupload.getOriginalFilename());
+				
+			// 실제 업로드
+			try {
+				carupload.transferTo(new File(path+"/"+carupload.getOriginalFilename()));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 		dao.updateCar(dto); // insert와 동일하므로, insert로 사용해도 무관함
 		
@@ -112,8 +131,5 @@ public class MyCarController {
 		
 		return "detail";
 	}
-	
-	
-	
 	
 }

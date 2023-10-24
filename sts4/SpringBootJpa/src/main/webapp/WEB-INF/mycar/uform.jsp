@@ -15,7 +15,7 @@
 <body>
 
 <div style="margin: 100px 100px; width: 500px;">
-	<form action="updatecar" method="post">
+	<form action="updatecar" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="num" value="${dto.num }">
 		<table class="table table-bordered">
 			<tr>
@@ -40,6 +40,12 @@
 				<th>구입일</th>
 				<td>
 					<input type="date" name="carguip" class="form-control" style="width: 200px;" value="${dto.carguip }">
+				</td>
+			</tr>
+			<tr>
+				<th>자동차 이미지</th>
+				<td>
+					<input type="file" name="carupload" class="form-control" style="width: 200px;" required="required">
 				</td>
 			</tr>
 			<tr>

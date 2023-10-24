@@ -35,12 +35,12 @@
 		<table class="table table-bordered">
 			<tr>
 				<th style="width: 60px;">번호</th>
-				<th style="width: 120px;">자동차명</th>
-				<th style="width: 100px;">색상</th>
+				<th style="width: 200px;">자동차명</th>
+				<th style="width: 80px;">색상</th>
 				<th style="width: 160px;">가격</th>
-				<th style="width: 220px;">구입일</th>
-				<th style="width: 220px;">등록일</th>
-				<th style="width: 200px;">편집</th>
+				<th style="width: 150px;">구입일</th>
+				<th style="width: 150px;">등록일</th>
+				<th style="width: 150px;">편집</th>
 			</tr>
 			
  			
