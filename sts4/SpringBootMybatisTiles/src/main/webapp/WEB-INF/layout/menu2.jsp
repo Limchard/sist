@@ -27,7 +27,7 @@
 		margin-right: 10px;
 		font-size: 24px;
 		font-family: 'Dongle';
-		background-color: #f7323f;
+		background-color: #FFD73C;
 		cursor: pointer;
 	}
 	ul.menu li a{
