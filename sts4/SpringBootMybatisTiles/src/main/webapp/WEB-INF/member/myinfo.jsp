@@ -13,40 +13,52 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 class="alert alert-info">${totalCount }명의 회원이 있습니다.</h2>
-	<button type="button" class="btn btn-outline-info" onclick="location.href='form'">회원가입</button>
-	<br><br>
+<c:forEach var="dto" items="${list }">
 	<table class="table table-bordered" style="width: 800px;">
 		<tr>
-			<th>No.</th>
-			<th>사진</th>
-			<th>이름</th>
-			<th>id</th>
-			<th>연락처</th>
-			<th>주소</th>
-			<th>이메일</th>
-			<th>가입날짜</th>
-			<th>강퇴</th>
+			<td rowspan="7" align="center" style="width: 350px;">
+				<img alt="" src="../membersave/${dto.photo }" style="width: 300px;">
+				<br><br>
+				<button type="button" class="btn btn-primary">사진수정</button>
+			</td>
+			<td>
+				이름: ${dto.name }
+			</td>
+			<td rowspan="7" align="center" valign="middle">
+				<button type="button" class="btn btn-success">정보수정</button><br><br>
+				<button type="button" class="btn btn-danger">회원탈퇴</button>
+			</td>
 		</tr>
-		<c:forEach var="dto" items="${list }" varStatus="no">
-			<tr>
-				<td>${no.count }</td>
-				<td>
-					<img alt="" src="../membersave/${dto.photo }" style="width: 50px;">
-				</td>
-				<td>${dto.name }</td>
-				<td>${dto.id }</td>
-				<td>${dto.hp }</td>
-				<td>${dto.addr }</td>
-				<td>${dto.email }</td>
-				<td>
-					<fmt:formatDate value="${dto.gaipday }" pattern="yyyy.MM.dd"/>
-				</td>
-				<td>
-					<button type="button" class="btn btn-danger">강퇴</button>
-				</td>
-			</tr>
-		</c:forEach>
+		<tr>
+			
+		</tr>
+		<tr>
+			<td>
+				id: ${dto.id }
+			</td>
+		</tr>
+		<tr>
+			<td>
+				hp	: ${dto.hp }
+			</td>
+		</tr>
+		<tr>
+			<td>
+				addr: ${dto.addr }
+			</td>
+		</tr>
+		<tr>
+			<td>
+				email: ${dto.email }
+			</td>
+		</tr>
+		<tr>
+			<td>
+				gaipday: ${dto.gaipday }
+			</td>
+		</tr>
+		
 	</table>
+</c:forEach>
 </body>
 </html>

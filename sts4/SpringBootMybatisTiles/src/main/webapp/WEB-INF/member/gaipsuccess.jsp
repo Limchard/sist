@@ -11,42 +11,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
-<style type="text/css">
-div.loginform {
-
-}
-caption.cap{
-	font-size: 30px;
-	color: green;
-}
-
-</style>
 </head>
 <body>
-<form action="" method="post">
-	<div class="loginform">
-		<table style="width: 300px;">
-			<caption align="top" class="cap"><b>Login</b></caption>
-			<tr>
-				<td>
-					<input type="text" class="form-control" name="id" id="id" required="required" placeholder="아이디">
-					<br>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<input type="password" class="form-control" name="pass" id="pass" required="required" placeholder="비밀번호">
-					<br>
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-					<button type="submit" class="btn btn-success" style="width: 200px;">Login</button>
-				</td>
-			</tr>
-		</table>
-	</div>	
-</form>	
+	
 </body>
 </html>

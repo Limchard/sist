@@ -58,7 +58,7 @@
 		<a href="${root }/member/list">회원목록</a>
 	</li>
 	<li>
-		<a href="${root }/member/form">회원가입</a>
+		<a href="${root }/member/myinfo">나의정보</a>
 	</li>
 	<li>
 		<a href="/login/form">로그인</a>
