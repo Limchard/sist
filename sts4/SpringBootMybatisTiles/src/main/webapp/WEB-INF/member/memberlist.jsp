@@ -11,6 +11,46 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		$("#allcheck").click(function(){
+			
+			var chk=$(this).is(":checked");
+			// console.log(chk); 
+			
+			$(".del").prop("checked",chk);
+		});
+		
+		$("#btnmemberdel").click(function(){
+			var cnt=$(".del:checked").length;
+			// alert(cnt);
+			
+			if(cnt==0){
+				alert("먼저 선택을 해주세요.")
+				return;
+			}
+			
+			$(".del:checked").each(function(i,element){
+				var num=$(this).attr("num");	
+				// console.log(num);
+				
+				// 선택한 체크 삭제
+				$.ajax({
+					type:"get",
+					url:"delete",
+					dataType:"html",
+					data:{"num":num},
+					success:function(){
+						alert("삭제되었습니다.");
+						location.reload();
+					}
+				});
+			});
+			
+		});
+		
+	});
+</script>
 </head>
 <body>
 	<h2 class="alert alert-info">${totalCount }명의 회원이 있습니다.</h2>
@@ -26,7 +66,9 @@
 			<th>주소</th>
 			<th>이메일</th>
 			<th>가입날짜</th>
-			<th>강퇴</th>
+			<th>
+				<input type="checkbox" id="allcheck">강퇴
+			</th>
 		</tr>
 		<c:forEach var="dto" items="${list }" varStatus="no">
 			<tr>
@@ -43,10 +85,13 @@
 					<fmt:formatDate value="${dto.gaipday }" pattern="yyyy.MM.dd"/>
 				</td>
 				<td>
-					<button type="button" class="btn btn-danger">강퇴</button>
+					<input type="checkbox" num=${dto.num } class="del">
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
+
+<button type="button" class="btn btn-outline-danger" id="btnmemberdel">Delete</button>
+
 </body>
 </html>

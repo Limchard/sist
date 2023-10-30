@@ -11,27 +11,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
-<style type="text/css">
-a{
-	font-size: 20px;
-	text-decoration: none;
-	color: black;
-}
-
-</style>
 </head>
 <body>
-
-	<c:set var="root" value="<%=request.getContextPath() %>"></c:set>
-	<c:if test="${sessionScope.loginok==null }">
-		<img alt="" src="${root }/image/limchard.jpeg" width="200">
-	</c:if>
-	<c:if test="${sessionScope.loginok!=null }">
-		<img alt="" src="${root }/membersave/${sessionScope.loginphoto}" width="200">
-	</c:if>
-	<a href="https://github.com/Limchard">git</a><br>
-	<a href="https://limchard.tistory.com/">tistory</a><br>
-	<a href="https://velog.io/@limchard">velog</a><br>
-
+	<script type="text/javascript">
+		alert("로그인 실패 ㅠㅠ");
+		history.back();
+	</script>
 </body>
 </html>

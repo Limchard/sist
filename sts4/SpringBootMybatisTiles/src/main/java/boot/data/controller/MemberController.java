@@ -107,4 +107,41 @@ public class MemberController {
 		
 		return "redirect:list";
 	}
+	
+	// 삭제는 ajax 로 진행할꺼에요~ // 반환값을 void로 한다. ajax는 포워드가 없다. 해당 페이지에서 바로 진행하기 때문.
+	@GetMapping("/member/delete")
+	@ResponseBody
+	public void deleteMember(@RequestParam String num) {
+		service.deleteMember(num);
+	}
+	
+	@PostMapping("/member/updatephoto")
+	@ResponseBody
+	public void photoupload(@RequestParam String num,
+			MultipartFile photo,
+			HttpSession session) {
+		
+		// 업로드할 경로
+		String path=session.getServletContext().getRealPath("/membersave");
+		
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		String fileName=sdf.format(new Date())+photo.getOriginalFilename();
+		
+		// 업로드하기
+		try {
+			photo.transferTo(new File(path+"/"+fileName));
+			
+			service.updatePhoto(fileName, num); // db 사진 수정
+			
+			session.setAttribute("loginphoto", fileName); // 세션사진수정
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 }

@@ -13,5 +13,22 @@
 	<select id="getSerchId" parameterType="String" resultType="int">
 		select count(*) from bootmember where id=#{id}
 	</select>
-	
+	<select id="getName" parameterType="String" resultType="String">
+		select name from bootmember where id=#{id}
+	</select>
+	<select id="loginPassCheck" parameterType="Map" resultType="int">  <!-- MyBatis라서 Map을 사용해야 함.. String, String 따로 못받음.. -->
+		select count(*) from bootmember where id=#{id} and pass=#{pass}
+	</select>
+	<select id="getDataById" parameterType="String" resultType="mdto">
+		select * from bootmember where id=#{id}	
+	</select>
+	<delete id="deleteMember" parameterType="String">
+		delete from bootmember where num=#{num}
+	</delete>
+	<update id="updatePhoto" parameterType="Map">
+		update bootmember set photo=#{photo} where num=#{num}
+	</update>
+	<update id="updateMember" parameterType="mdto">
+		update bootmember set name=#{name},hp=#{hp},addr=#{addr},email=#{email} where num=#{num}
+	</update>
 </mapper>

@@ -11,15 +11,58 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+
+<script type="text/javascript">
+$(function(){
+	
+	$(".btnnewphoto").click(function(){
+		
+		$("#newphoto").trigger("click"); // triger : 강제 실행?
+			
+	});
+	
+	$("#newphoto").change(function(){
+		var num=$(this).attr("num");
+		console.log(num);
+		
+		var form=new FormData();
+		form.append("photo",$("#newphoto")[0].files[0]); //선택한 이미지 한개만 추가. // 선택한 이미지 중 한개만 추가하겠다.
+		form.append("num",num);
+		
+		console.dir(form);
+		
+		$.ajax({
+			type:"post",
+			dataType:"html",
+			url:"updatephoto",
+			processData: false,
+            contentType: false,
+			data:form,
+			success:function(res){
+				location.reload();
+			}
+			
+		});
+		
+	});
+	
+});
+
+
+</script>
 </head>
 <body>
+
 <c:forEach var="dto" items="${list }">
+<c:if test="${sessionScope.loginok!=null and sessionScope.myid==dto.id }">
+<%-- <c:if test="${sessionScope.loginok!=null && sessionScope.myid==dto.id }"> --%>
 	<table class="table table-bordered" style="width: 800px;">
 		<tr>
 			<td rowspan="7" align="center" style="width: 350px;">
 				<img alt="" src="../membersave/${dto.photo }" style="width: 300px;">
 				<br><br>
-				<button type="button" class="btn btn-primary">사진수정</button>
+				<input type="file" style="display: none;" num=${dto.num} id="newphoto"> <!-- 사진 수정 시 호출하기. -->
+				<button type="button" class="btn btn-primary btnnewphoto">사진수정</button>
 			</td>
 			<td>
 				이름: ${dto.name }
@@ -34,31 +77,31 @@
 		</tr>
 		<tr>
 			<td>
-				id: ${dto.id }
+				아이디: ${dto.id }
 			</td>
 		</tr>
 		<tr>
 			<td>
-				hp	: ${dto.hp }
+				연락처: ${dto.hp }
 			</td>
 		</tr>
 		<tr>
 			<td>
-				addr: ${dto.addr }
+				주소: ${dto.addr }
 			</td>
 		</tr>
 		<tr>
 			<td>
-				email: ${dto.email }
+				e-mail: ${dto.email }
 			</td>
 		</tr>
 		<tr>
 			<td>
-				gaipday: ${dto.gaipday }
+				가입날짜: ${dto.gaipday }
 			</td>
 		</tr>
-		
 	</table>
+	</c:if>
 </c:forEach>
 </body>
 </html>

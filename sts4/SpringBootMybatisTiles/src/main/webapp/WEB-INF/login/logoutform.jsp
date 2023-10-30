@@ -11,27 +11,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
-<style type="text/css">
-a{
-	font-size: 20px;
-	text-decoration: none;
-	color: black;
-}
-
-</style>
 </head>
+<c:set var="root" value="<%=request.getContextPath() %>"></c:set>
 <body>
 
-	<c:set var="root" value="<%=request.getContextPath() %>"></c:set>
-	<c:if test="${sessionScope.loginok==null }">
-		<img alt="" src="${root }/image/limchard.jpeg" width="200">
-	</c:if>
-	<c:if test="${sessionScope.loginok!=null }">
-		<img alt="" src="${root }/membersave/${sessionScope.loginphoto}" width="200">
-	</c:if>
-	<a href="https://github.com/Limchard">git</a><br>
-	<a href="https://limchard.tistory.com/">tistory</a><br>
-	<a href="https://velog.io/@limchard">velog</a><br>
+<div>
+	<img alt="" src="${root }/image/stars.jpg" width="200" align="left" hspace="20">
+	<br><br>
+	<b>${name }님 환영합니다!</b><br><br>
+	<button type="button" class="btn btn-danger" style="width: 100px;" onclick="location.href='logoutprocess'">로그아웃</button>
+</div>
 
 </body>
 </html>

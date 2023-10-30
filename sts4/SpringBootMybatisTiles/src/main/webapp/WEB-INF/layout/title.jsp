@@ -14,8 +14,19 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath() %>"></c:set>
-	<a href="/"><img alt="" src="${root }/image/titlett.jpg" width="200"></a><br>
-	<b>SpringBoot+Mybatis+Tiles</b>
+	<a href="/"><img alt="" src="${root }/image/titlett.jpg" width="200"></a>
 	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	<c:if test="${sessionScope.loginok==null }">
+		<button type="button" class="btn btn-outline-danger" onclick="location.href='${root}/login/form'">Login</button>
+	</c:if>
+	
+	<!-- 로그인에 대한 부분은 단순 mapping 말고, 전체 루트를 적어줘야 한다. -->
+	
+	<c:if test="${sessionScope.loginok!=null }">
+		<b>${sessionScope.myid }님 좋은하루 보내세요~</b>
+		<button type="button" class="btn btn-outline-danger" onclick="location.href='${root}/login/logoutprocess'">Logout</button>
+	</c:if>
 </body>
 </html>

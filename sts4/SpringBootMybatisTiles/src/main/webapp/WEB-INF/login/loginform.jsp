@@ -13,23 +13,21 @@
 <title>Insert title here</title>
 <style type="text/css">
 div.loginform {
-
 }
 caption.cap{
 	font-size: 30px;
 	color: green;
 }
-
 </style>
 </head>
 <body>
-<form action="" method="post">
+<form action="loginprocess" method="post">
 	<div class="loginform">
 		<table style="width: 300px;">
 			<caption align="top" class="cap"><b>Login</b></caption>
 			<tr>
 				<td>
-					<input type="text" class="form-control" name="id" id="id" required="required" placeholder="아이디">
+					<input type="text" class="form-control" name="id" id="id" required="required" placeholder="아이디" value="${sessionScope.saveok==null?"":sessionScope.myid }">
 					<br>
 				</td>
 			</tr>
@@ -38,6 +36,11 @@ caption.cap{
 				<td>
 					<input type="password" class="form-control" name="pass" id="pass" required="required" placeholder="비밀번호">
 					<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="saveid" ${sessionScope.saveok==null?"":"checked" }> 아이디 저장
 				</td>
 			</tr>
 			<tr>
