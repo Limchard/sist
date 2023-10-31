@@ -108,7 +108,7 @@ public class MemberController {
 		return "redirect:list";
 	}
 	
-	// 삭제는 ajax 로 진행할꺼에요~ // 반환값을 void로 한다. ajax는 포워드가 없다. 해당 페이지에서 바로 진행하기 때문.
+	// 사진 삭제는 ajax 로 진행할꺼에요~ // 반환값을 void로 한다. ajax는 포워드가 없다. 해당 페이지에서 바로 진행하기 때문.
 	@GetMapping("/member/delete")
 	@ResponseBody
 	public void deleteMember(@RequestParam String num) {
@@ -143,5 +143,45 @@ public class MemberController {
 		}
 		
 	}
+	
+	// 나의 정보 삭제
+	@GetMapping("/member/deleteme")
+	@ResponseBody
+	public void deleteinfo(@RequestParam String num,
+			HttpSession session) {
+		
+		String path=session.getServletContext().getRealPath("/membersave");
+		String photo=service.getDataByNum(num).getPhoto();
+		File file=new File(path+"/"+photo);
+		file.delete();
+		
+		
+		service.deleteMember(num);
+		
+		session.removeAttribute("loginok");
+		session.removeAttribute("saveok");
+		session.removeAttribute("myid");
+		session.removeAttribute("loginphoto");
+		
+	}
+//	// 나의 정보 받아오기
+//	@GetMapping("/member/umodal")
+//	public MemberDto umodal(@RequestParam String num) {
+//		
+//		MemberDto mdto=service.getDataByNum(num);
+//		
+//		return mdto;
+//	}
+	
+	// 나의 정보 업데이트
+	@PostMapping("/member/updateinfo")
+	@ResponseBody
+	public void updateinfo(@ModelAttribute MemberDto mdto) {
+
+		service.updateMember(mdto);
+		
+	}
+	
+	
 	
 }

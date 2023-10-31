@@ -19,4 +19,6 @@ public interface MemberMapperInter {
 	public void deleteMember(String num);
 	public void updatePhoto(Map<String, String>map); // 회원사진 수정하기.
 	public void updateMember(MemberDto mdto); // 회원정보 수정하기.
+	public MemberDto getDataByNum(String num); // num을 이용한 회원 정보 가져오기
+	
 }

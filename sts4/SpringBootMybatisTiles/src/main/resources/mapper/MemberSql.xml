@@ -31,4 +31,8 @@
 	<update id="updateMember" parameterType="mdto">
 		update bootmember set name=#{name},hp=#{hp},addr=#{addr},email=#{email} where num=#{num}
 	</update>
+	<select id="getDataByNum" parameterType="String" resultType="mdto">
+		select * from bootmember where num=#{num}
+	</select>
+	
 </mapper>

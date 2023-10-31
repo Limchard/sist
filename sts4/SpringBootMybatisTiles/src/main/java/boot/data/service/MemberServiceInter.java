@@ -17,4 +17,5 @@ public interface MemberServiceInter { // Service에서 Override 받기 편하려
 	public void deleteMember(String num);
 	public void updatePhoto(String photo,String num); // 회원사진 수정하기.
 	public void updateMember(MemberDto mdto); // 회원정보 수정하기.
+	public MemberDto getDataByNum(String num);
 }
