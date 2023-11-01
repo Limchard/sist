@@ -72,8 +72,6 @@ $(function(){
 	
 	
 	// modal창 띄우기
-	
-	
 	$(".btnmodify").click(function(){
 		
 		// 수정 모달창 띄우기
@@ -81,6 +79,7 @@ $(function(){
 
 	});
 	
+	// update..
 	$("#btnupdateok").click(function(){
 		
 		var name=$("#uname").val();
@@ -94,16 +93,16 @@ $(function(){
 		// alert(num);
 		
  		$.ajax({
-		type:"post",
-		dataType:"html",
-		url:"updateinfo",
-		data:{"num":num,"name":name,"hp":hp,"addr":addr,"email":email},
-		success:function(res){
-			// alert(res.num); 
-			location.reload();
-		}
-		
-	}); 
+			type:"post",
+			dataType:"html",
+			url:"updateinfo",
+			data:{"num":num,"name":name,"hp":hp,"addr":addr,"email":email},
+			success:function(res){
+				// alert(res.num); // controller 에서 반환타입이 void 이다. 그래서 값이 넘어오지 않는다. 
+				location.reload();
+			}
+			
+		}); 
 		
 	});
 	
