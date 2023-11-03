@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Dongle:wght@300&family=East+Sea+Dokdo&family=Gamja+Flower&family=Gowun+Dodum&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Orbit&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
@@ -76,8 +77,45 @@ $(function(){
 	
 	
 	// 댓글 수정창 띄우기
+	$(document).on("click","i.amodi",function(){
+		
+		idx=$(this).attr("idx");
+		// alert(idx);
+		
+		$.ajax({
+			type:"get",
+			dataType:"json",
+			url:"/mbanswer/adata",
+			data:{"idx":idx},
+			success:function(ares){
+				$("#ucontent").val(ares.content);
+			}
+				
+		});
+		
+		$("#mbUpdateModal").modal("show");
+		
+		
+	});
 	
 	// 댓글 수정
+	$(document).on("click","#btnupdate",function(){
+		var content=$("#ucontent").val();
+		// alert(idx+"."+content);
+		
+ 		$.ajax({
+			type:"post",
+			dataType:"html",
+			url:"/mbanswer/aupdate",
+			data:{"content":content,"idx":idx},
+			success:function(){
+				list();
+				$("#mbUpdateModal").modal("hide");
+			}
+		
+		}); 
+		
+	});
 	
 	// 댓글 삭제
 	$(document).on("click",".adel",function(){
@@ -98,6 +136,10 @@ $(function(){
 			});
 		}
 	});
+	
+	
+	
+	
 	
 });
 
@@ -212,6 +254,35 @@ function list(){
 			</td>
 		</tr>
 	</table>
+	
+<!-- 수정창 -->
+	<!-- The Modal -->
+<div class="modal" id="mbUpdateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">댓글수정</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      	<input type="text" id="ucontent" class="form-control">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-warning" id="btnupdate" >수정</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+	
+	
 </div>	
 </body>
 </html>

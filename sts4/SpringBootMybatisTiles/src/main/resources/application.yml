@@ -1,7 +1,7 @@
 
 # tomcat port
 server:
-  port: 9000
+  port: 9001
 
 # jsp
 spring:
@@ -16,8 +16,6 @@ spring:
       max-request-size:
         10MB
         # spring의 기본 첨부파일은 1MB 기준이다. 이거보다 큰 size의 첨부파일을 넣으려면 max size를 재정의 해줘야 한다.
-
-    
 
   devtools:
     livereload:

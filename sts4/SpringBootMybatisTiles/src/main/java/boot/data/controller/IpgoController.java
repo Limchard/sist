@@ -52,7 +52,7 @@ public class IpgoController {
 	
 	@GetMapping("/ipgo/ipgoform")
 	public String form() {
-		return "/ipgo/ipgoform";
+		return "/sub/ipgo/ipgoform";
 	}
 	
 	@PostMapping("/ipgo/insert")

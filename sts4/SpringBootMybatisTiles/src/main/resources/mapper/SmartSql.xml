@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="boot.data.mapper.SmartMapperInter"> <!-- Spring boot 에서는 namespace에 무조건 경로를 써줘야 한다. -->
+	<insert id="insertSmShop" parameterType="smdto">
+		insert into smartshop(sangname,price,color,content.ipgoday) values(#{sangname},#{price},#{color},#{content},#{ipgoday}) 
+	</insert>
+	<select id="getAllSmShop" resultType="smdto">
+		select * from smartshop order by num desc
+	</select>
+	<select id="getSmShopData" parameterType="int" resultType="smdto">
+		select * from smartshop where num=#{num}
+	</select>
+	<update id="updateSmShop" parameterType="smdto">
+		update smartshop set sangname=#{sangname},price=#{price},color=#{color},content=#{content},ipgoday=#{ipgoday} where num=#{num}
+	</update>
+	<delete id="deleteSmShop" parameterType="int">
+		delete from smartshop where num=#{num}
+	</delete>
+</mapper> 

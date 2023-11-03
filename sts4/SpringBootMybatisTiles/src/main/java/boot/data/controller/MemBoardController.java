@@ -188,8 +188,7 @@ public class MemBoardController {
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam String num) {
-		
-				
+					
 		return "redirect:list";
 	}
 	

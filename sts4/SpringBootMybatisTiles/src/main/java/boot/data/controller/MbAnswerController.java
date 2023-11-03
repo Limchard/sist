@@ -64,4 +64,18 @@ public class MbAnswerController {
 		mapper.deleteMbAnswer(idx);		
 	}
 	
+	// 수정창 content(모달창) 띄우기
+	@GetMapping("/adata")
+	public MbAnswerDto getData(String idx) {
+		
+		return mapper.getAnswer(idx);
+	}
+	
+	// 실절적인 수정
+	@PostMapping("/aupdate")
+	public void aupdate(@ModelAttribute MbAnswerDto dto) {
+		
+		mapper.updateMbAnswer(dto);
+	}
+	
 }

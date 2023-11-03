@@ -1,7 +1,7 @@
 
 # server.port
 server:
-  port: 9030
+  port: 9040
   
 # mysql setting
 spring:
