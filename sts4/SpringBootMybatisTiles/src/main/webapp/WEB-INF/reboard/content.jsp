@@ -13,6 +13,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<button type="button" class="btn btn-info" onclick="location.href='form'">글쓰기</button>
+	<h2>content page</h2>
 </body>
 </html>
