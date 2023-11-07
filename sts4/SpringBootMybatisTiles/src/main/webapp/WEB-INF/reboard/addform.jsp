@@ -12,6 +12,13 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 </head>
+<script>
+    <c:if test="${sessionScope.loginok==null}">
+        alert("먼저 로그인 해주세요");
+        history.back();
+    </c:if>
+</script>
+
 <body>
 	<div style="margin: 50px 100px; width: 600px;">
         <form action="insert" method="post" enctype="multipart/form-data">

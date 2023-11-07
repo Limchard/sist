@@ -14,9 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/reboard")
@@ -72,7 +70,7 @@ public class ReBoardController {
 		no=totalCount-(currentPage-1)*perPage;
 
 		// 각 페이지에서 필요한 게시글 가져오기
-		List<ReBoardDto> list=service.getPagingList(sc,sw,startPage,perPage);
+		List<ReBoardDto> list=service.getPagingList(sc,sw,startNum,perPage);
 
 //		// list의 각글에 댓글 갯수 표시하기
 //		for(BoardDto d:list) {
@@ -127,8 +125,8 @@ public class ReBoardController {
 								@RequestParam int currentPage){
 
 		String id=(String) session.getAttribute("myid");
-		// String name=memberService.getName(id);
-		String name=(String)session.getAttribute("loginname");
+		String name=memberService.getName(id);
+		// String name=(String)session.getAttribute("loginname");
 
 		// 실제 경로 구하기
 		String path=session.getServletContext().getRealPath("/membersave");
@@ -138,8 +136,8 @@ public class ReBoardController {
 		// 이름 초기화
 		String photo="";
 
-		if(upload.get(0).getOriginalFilename()==null){
-			photo=null;
+		if(upload.get(0).getOriginalFilename().equals("")){
+			photo="no";
 		} else {
 			for (MultipartFile f:upload){
 				String fName= sdf.format(new Date())+"_"+f.getOriginalFilename();
@@ -151,7 +149,6 @@ public class ReBoardController {
 					throw new RuntimeException(e);
 				}
 			}
-
 			// photo 에서 마지막 컴마 제거
 			photo=photo.substring(0,photo.length()-1);
 		}
@@ -167,7 +164,62 @@ public class ReBoardController {
 
 		int maxNum= service.getMaxNum();
 
-		return "redirect:list";
+		return "redirect:list?currentPage="+currentPage;
+	}
+
+	@GetMapping("/content")
+	public String detail(@RequestParam int num,int currentPage,
+						 Model model){
+
+		// 조회수 증가
+		service.updateReadCount(num);
+
+		// dto
+		ReBoardDto dto=service.getData(num);
+
+		model.addAttribute("dto",dto);
+		model.addAttribute("currentPage",currentPage);
+
+		return "/reboard/content";
+	}
+
+	// 추천수 증가
+	@GetMapping("/likes")
+	@ResponseBody
+	public Map<String,Integer> likes(int num){
+		service.updateLikes(num);
+		int likes=service.getData(num).getLikes();
+
+		Map<String,Integer>map=new HashMap<>();
+		map.put("likes",likes);
+
+		return map;
+	}
+
+
+
+	// 삭제
+	@GetMapping("/delete")
+	public String deleteContent(@RequestParam int num, @RequestParam int currentPage,
+								HttpSession session){
+
+		String photo=service.getData(num).getPhoto();
+		System.out.println(photo);
+
+		if(photo!="no"){
+			String[]photoArr=photo.split(",");
+			for (int i=0;i<photoArr.length;i++){
+
+				String path=session.getServletContext().getRealPath("/membersave");
+
+				File file=new File(path+"/"+photo);
+				file.delete();
+			}
+		}
+
+		service.deleteReBoard(num);
+
+		return "redirect:list?currentPage="+currentPage;
 	}
 
 }

@@ -71,14 +71,14 @@ $(function(){
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		
 		<c:if test="${sessionScope.loginok==null }">
-			<button type="button" class="btn btn-outline-danger" onclick="location.href='${root}/login/form'">Login</button>
+			<button type="button" class="btn btn-info" onclick="location.href='${root}/login/form'">Login</button>
 		</c:if>
 		
 		<!-- 로그인에 대한 부분은 단순 mapping 말고, 전체 루트를 적어줘야 한다. -->
 		
 		<c:if test="${sessionScope.loginok!=null }">
 			<b>${sessionScope.myid }님 좋은하루 보내세요~</b>
-			<button type="button" class="btn btn-outline-danger" onclick="location.href='${root}/login/logoutprocess'">Logout</button>
+			<button type="button" class="btn btn-info" onclick="location.href='${root}/login/logoutprocess'">Logout</button>
 		</c:if>
 		
 		<!-- 모달~ 모달~ -->	
@@ -87,12 +87,12 @@ $(function(){
 		
 		<c:if test="${sessionScope.loginok==null }">
 		  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" id="btnlogin">
-		    Login
+		    Login Ajax
 		  </button>
 		</c:if>
 		<c:if test="${sessionScope.loginok!=null }">
 		  <button type="button" class="btn btn-danger" id="btnlogout">
-		    Logout
+		    Logout Ajax
 		  </button>
 		</c:if>
 				  

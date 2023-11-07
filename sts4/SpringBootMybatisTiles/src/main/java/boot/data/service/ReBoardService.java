@@ -32,7 +32,7 @@ public class ReBoardService implements ReBoardServiceInter {
     public List<ReBoardDto> getPagingList(String searchcolumn, String searchword, int startnum, int perpage) {
         Map<String,Object>map=new HashMap<>();
         map.put("searchcolumn",searchcolumn);
-        map.put("searchcolumn",searchword);
+        map.put("searchword",searchword);
         map.put("startnum",startnum);
         map.put("perpage",perpage);
         return mapperInter.getPagingList(map);

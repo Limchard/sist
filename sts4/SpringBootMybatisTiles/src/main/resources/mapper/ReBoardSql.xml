@@ -41,10 +41,9 @@
 		where num=#{num}
 	</update>
 	<delete id="deleteReBoard" parameterType="int">
-		delete from reminiboard num=#{num}
+		delete from reminiboard where num=#{num}
 	</delete>
 	<update id="updateLikes" parameterType="int">
 		update reminiboard set likes=likes+1 where num=#{num}
 	</update>
-
 </mapper>
