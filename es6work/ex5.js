@@ -3,6 +3,7 @@ let arr2=[6,7];
 let arr3=[11,12,...arr1,22,...arr2];
 
 console.log(arr3.length);
+console.log(arr3);
 console.dir(arr3);
 
 let arr4=[...[100,200],...arr2];

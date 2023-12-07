@@ -12,8 +12,5 @@ console.log(result);
 // 템플릿,, 리터럴,, 백틱(`)
 
 // 리터럴(백틱 ``).. 중간변수는 ${변수명}
-let result2=`이름: ${irum}
-태어난연도: ${birth}
-나이: ${curYear-birth}
-좋아하는 음식: ${likefood}`
+let result2=`이름: ${irum} 태어난연도: ${birth} 나이: ${curYear-birth} 좋아하는 음식: ${likefood}`
 console.log(result2);

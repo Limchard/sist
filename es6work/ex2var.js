@@ -47,11 +47,11 @@ const hi4={
 }
 console.log(hi4);
 
-hi4.message="이렇게는 될까?";
+hi4.message="이렇게는 될까?";// 중간에 값 수정 가능
 
 console.log(hi4);
 
-hi4.times=44;
+hi4.times=44; // 중간에 값 수정 가능
 console.log(hi4);
 
 

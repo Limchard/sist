@@ -7,5 +7,7 @@ var msg="happy";
 console.log("메세지: "+msg+"!!!");
 console.log("메세지 %s!!!",msg);
 
-var j={"irum":"김영환"};
+var j={"irum":"뽀로로"};
 console.log("Json출력: %j",j);
+
+
