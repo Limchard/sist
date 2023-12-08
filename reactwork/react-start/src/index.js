@@ -13,10 +13,10 @@ import FifthApp from "./components/FifthApp";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+     {/*<App /> */}
     {/* <App /> 주석처리 하면 화면 안나온다. export한 것을 받아와서 결국 화면에 띄워주는 곳은  여기이다. */}
-    {/* <FirstApp/> */}
-    {/* <SecondApp></SecondApp> */}
+    {/* <FirstApp/>*/}
+    {/* <SecondApp></SecondApp>*/}
     {/*<ThirdApp/>*/}
     {/*<FourthApp/>*/}
       <FifthApp/>

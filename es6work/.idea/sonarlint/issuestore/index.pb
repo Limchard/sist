@@ -11,3 +11,5 @@
 ex8.js,9/c/9ca457c57844b00af4fe8904eb4f5ca0ecee3c64
 6
 ex9.js,7/1/71b754935781117a537c9efbb08c4e28a031455a
+7
+ex10.js,5/e/5efd7d9beabcbfe776ff08f9d2c25fdfe7441e89

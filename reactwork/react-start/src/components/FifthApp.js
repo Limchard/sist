@@ -40,6 +40,8 @@ function FifthApp(props) {
             </div>
             <div className='result'>
                 이름 : {resultName} <br/>
+                자바 점수 : {java} <br/>
+                리액트 점수 : {react} <br/>
                 총합 : {total} 점 <br/>
                 평균 : {avg} 점
             </div>

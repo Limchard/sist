@@ -33,4 +33,4 @@ function FirstApp(props) {
         </div>
     );
 }
-export default FirstApp;<h2 className='alert alert-warning'>FirstApp Component!!!</h2>
+export default FirstApp;
