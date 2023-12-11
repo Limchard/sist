@@ -7,6 +7,7 @@ import {useState} from "react";
 import FourApp from "./components/FourApp";
 import FiveApp from "./components/FiveApp";
 import SixApp from "./components/SixApp";
+import SevenApp from "./components/SevenApp";
 
 function App() {
 
@@ -26,11 +27,12 @@ function App() {
             <option value='4'>FourApp 확인하기</option>
             <option value='5'>FiveApp 확인하기</option>
             <option value='6'>SixApp 확인하기</option>
+            <option value='7'>SevenApp 확인하기</option>
         </select>
 
         {index===1?<OneApp/>:index===2?<TwoApp/>
             :index===3?<ThreeApp/>:index===4?<FourApp/>
-                :index===5?<FiveApp/>:<SixApp/>}
+                :index===5?<FiveApp/>:index===6?<SixApp/>:<SevenApp/>}
 
 
     </div>

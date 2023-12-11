@@ -13,8 +13,6 @@ V
 &react-start/src/components/FifthApp.js,f/4/f49450d4fd1d371611ce995d0fa67790a4812e14
 H
 react-start/src/index.js,5/0/502ef4099dac939b353cd0f8c0582db06223920e
-E
-velog-test/src/App.js,f/3/f36e541f00aa667c4ec79591e4ecd9db53d0cc33
 I
 react-start/src/index.css,a/7/a7936299cab339a86f8cb93adda493d2cbb6b94f
 K
@@ -55,3 +53,7 @@ X
 (react-day231208/src/components/SixApp.js,8/5/85cab8b13e784765280476512b9bfe178d50dee6
 Q
 !react-day231208/public/robots.txt,2/3/233c920dcaa672a77e2752f4894ae514168f58cb
+T
+$react-day231208/public/manifest.json,e/c/ecbc8298718af25b76fa7ca8fcddf40636f1a3d7
+Z
+*react-day231208/src/components/SevenApp.js,e/5/e5af2d1173f7ca1d061aaa6f2b6aa83496ae9b74

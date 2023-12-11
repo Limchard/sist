@@ -1,6 +1,8 @@
 
-Gjavascript:S1128"$Remove this unused import of 'logo'.(¾‹õ«8ıÓ¸Ä1
-ljavascript:S3358"DExtract this nested ternary operation into an independent statement.(‹òííøÿÿÿÿ8ıÓ¸Ä1
-ljavascript:S3358 "DExtract this nested ternary operation into an independent statement.(âé½òûÿÿÿÿ8ıÓ¸Ä1
-ljavascript:S3358 "DExtract this nested ternary operation into an independent statement.(âé½òûÿÿÿÿ8ıÓ¸Ä1
-ljavascript:S3358!"DExtract this nested ternary operation into an independent statement.(ŒÒÜïşÿÿÿÿ8ıÓ¸Ä1
+Gjavascript:S1128"$Remove this unused import of 'logo'.(¾‹õ«8óá´µÅ1
+wjavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(­•Ñ8óá´µÅ1
+ljavascript:S3358!"DExtract this nested ternary operation into an independent statement.(‹òííøÿÿÿÿ8óá´µÅ1
+ljavascript:S3358""DExtract this nested ternary operation into an independent statement.(âé½òûÿÿÿÿ8óá´µÅ1
+ljavascript:S3358""DExtract this nested ternary operation into an independent statement.(âé½òûÿÿÿÿ8óá´µÅ1
+ljavascript:S3358#"DExtract this nested ternary operation into an independent statement.(€‡İ¢ÿÿÿÿÿ8óá´µÅ1
+ljavascript:S3358#"DExtract this nested ternary operation into an independent statement.(€‡İ¢ÿÿÿÿÿ8óá´µÅ1

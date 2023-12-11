@@ -25,7 +25,6 @@ function FourApp(props) {
 
     const colorList=colors.map((color)=>(<div style={{backgroundColor:'{color}'}}></div>));
 
-
     return (
         <div>
             <h3 className='alert alert-secondary'>FourApp입니다.</h3>
@@ -43,18 +42,15 @@ function FourApp(props) {
                         {nameList}
                     </ol>
                 </div>
-
             </Stack>
 
             <hr/>
             <Alert severity="info"><AppleIcon/> 과제_배열색상 가로로 출력하기</Alert>
-
                 {
                     // colors.map((color)=>(<div className={'d-inline-flex'} style={{...colorClass,backgroundColor:color}}></div>))
                     colors.map((color)=>(<div className={'colorBox'} style={{backgroundColor:color}}></div>))
+                    // colors.map(()=>()) : 이런 형식이다.
                 }
-
-
         </div>
     );
 }
