@@ -1,5 +1,6 @@
 const array=[1,2,3,4,5]; // 3을 제거하고 싶어요.
 // const delIndex=2;
+console.log(array);
 
 
 // splice

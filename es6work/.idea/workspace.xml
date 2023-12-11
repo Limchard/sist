@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="232bc4e8-bf8a-47a3-a678-8c52e350abc3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5efd7d9beabcbfe776ff08f9d2c25fdfe7441e89" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5efd7d9beabcbfe776ff08f9d2c25fdfe7441e89" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8da41b6b4acb1dc9111a4b27f5fa8a71c663afe2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8da41b6b4acb1dc9111a4b27f5fa8a71c663afe2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex10.js" beforeDir="false" afterPath="$PROJECT_DIR$/ex10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/0/b/0bf667c7ba3407273a0e0009c0bfe62e9b9ccd4f" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/0/b/0bf667c7ba3407273a0e0009c0bfe62e9b9ccd4f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/6/a/6a4e43499c6de2f11b5e114a257a990fea781476" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/6/a/6a4e43499c6de2f11b5e114a257a990fea781476" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/8/5/85cab8b13e784765280476512b9bfe178d50dee6" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/8/5/85cab8b13e784765280476512b9bfe178d50dee6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/9/5/956e0c5af964e532a4be415b92a4bdbf4f027ac3" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/9/5/956e0c5af964e532a4be415b92a4bdbf4f027ac3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex11.js" beforeDir="false" afterPath="$PROJECT_DIR$/ex11.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/d/e/de726d4505c3fe6faa6fc274eaee935187614f6e" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/d/e/de726d4505c3fe6faa6fc274eaee935187614f6e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/e/2/e256332dfa5e6f86bb1a6fc6d6bf40dc6ab2c33e" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/e/2/e256332dfa5e6f86bb1a6fc6d6bf40dc6ab2c33e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/f/3/f36e541f00aa667c4ec79591e4ecd9db53d0cc33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/securityhotspotstore/f/3/f36e541f00aa667c4ec79591e4ecd9db53d0cc33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/react-day231208/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/react-day231208/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/react-day231208/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/react-day231208/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/react-day231208/src/components/FiveApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/react-day231208/src/components/FiveApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/react-day231208/src/components/FourApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/react-day231208/src/components/FourApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../reactwork/react-day231208/src/components/SixApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../reactwork/react-day231208/src/components/SixApp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +73,7 @@
       <workItem from="1701908697499" duration="6219000" />
       <workItem from="1702004959014" duration="3158000" />
       <workItem from="1702256819382" duration="1788000" />
-      <workItem from="1702261604903" duration="591000" />
+      <workItem from="1702261604903" duration="3804000" />
     </task>
     <servers />
   </component>
