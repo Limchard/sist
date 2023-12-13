@@ -28,12 +28,12 @@ function TwoApp(props) {
     return (
         <div>
             <h3 className={'alert alert-secondary'}>TwoApp입니다._state 를 객체변수로 받아서 테스트</h3>
-            <h3>이름 : <input type={"text"} className={'form form-control'} name={'irum'} defaultValue={inputs.irum}
-                            onChange={changeData}/></h3>
-            <h3>주소 : <input type={"text"} className={'form form-control'} name={'addr'} defaultValue={inputs.addr}
-                            onChange={changeData}/></h3>
-            <h3>나이 : <input type={"text"} className={'form form-control'} name={'age'} defaultValue={inputs.age}
-                            onChange={changeData}/></h3>
+            <h3 style={{display:'inline-flex',width:'500px'}}>이름 : &nbsp;&nbsp;<input type={"text"} className={'form form-control'} name={'irum'} defaultValue={inputs.irum}
+                            onChange={changeData} style={{width:'300px'}}/></h3><br/>
+            <h3 style={{display:'inline-flex',width:'500px'}}>주소 : &nbsp;&nbsp;<input type={"text"} className={'form form-control'} name={'addr'} defaultValue={inputs.addr}
+                            onChange={changeData} style={{width:'300px'}}/></h3><br/>
+            <h3 style={{display:'inline-flex',width:'500px'}}>나이 : &nbsp;&nbsp;<input type={"text"} className={'form form-control'} name={'age'} defaultValue={inputs.age}
+                            onChange={changeData} style={{width:'300px'}}/></h3><br/>
             <hr/>
             <h2>이름: {inputs.irum}, {inputs["irum"]}</h2>
             <h2>주소: {inputs.addr}, {inputs["addr"]}</h2>

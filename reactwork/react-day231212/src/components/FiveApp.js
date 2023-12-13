@@ -18,12 +18,12 @@ function FiveApp(props) {
         let tot=java+react+spring;
         let avg=(tot/3).toFixed(2); // 소숫점..
 
-        let r=`[결과확인] 
-        이름 : ${name} 
-        자바점수: ${java} 
+        let r=`[결과확인]
+        이름 : ${name}
+        자바점수: ${java}
         리액트점수: ${react}
-        스프링점수: ${spring} 
-        총점: ${tot} 
+        스프링점수: ${spring}
+        총점: ${tot}
         평균: ${avg}`;
 
         setResult(r);

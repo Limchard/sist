@@ -21,8 +21,8 @@ function SixApp(props) {
             <SixSubApp name={'뽀로로'} age={'7'}/>
             <SixSubApp name={'포비'} age={'54'}/>
             <SixSubApp name={'루피'} age={'31'}/>
-        {/*    자식은 연속적으로 여러개 호출도 가능하다. */}
-        {/*  props 라는 변수로 name, age 전달 가능하다.  */}
+          {/*  자식은 연속적으로 여러개 호출도 가능하다. */}
+          {/*props 라는 변수로 name, age 전달 가능하다.  */}
             <br/><br/>
             <SixSubApp2 flower={"수국"} price={'25000'} linecolor={'purple'}/>
             <SixSubApp2 flower={"벚꽃"} price={'35000'} linecolor={'pink'}/>
@@ -32,6 +32,7 @@ function SixApp(props) {
             <br/><br/>
             <div className={'number'}>{number}</div>
             <SixSubApp3 incre={NumberIncre} decre={NumberDecre}/>
+            <br/><br/>
         </div>
     );
 }
