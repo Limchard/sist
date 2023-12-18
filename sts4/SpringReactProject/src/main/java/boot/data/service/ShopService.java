@@ -23,4 +23,9 @@ public class ShopService implements ShopServiceInter {
         return shopMapper.getShopDatas();
     }
 
+    @Override
+    public ShopDto getData(int num) {
+        return shopMapper.getData(num);
+    }
+
 }

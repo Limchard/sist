@@ -9,5 +9,4 @@ function Root(props) {
         </BrowserRouter>
     );
 }
-
 export default Root;

@@ -10,5 +10,8 @@
     <select id="getShopDatas" resultType="ShopDto">
         select * from reactshop order by dan asc
     </select>
+    <select id="getData" parameterType="int" resultType="ShopDto">
+        select * from reactshop where num=#{num}
+    </select>
 
 </mapper>

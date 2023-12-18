@@ -123,8 +123,6 @@ S
 #react-final/src/conponents/About.js,a/c/acf046a6ec36483993fee2872ef5c60fe8cbdfcd
 N
 react-final/src/board/Board.js,f/f/ffb91c7ab44520afedd7a5388aa5f3e9b2c6d76b
-M
-react-final/src/board/Main.js,9/e/9e0d50a0bf3c93bca66b4d02fb735d67269705f0
 L
 react-final/src/shop/Shop.js,5/b/5b4f3450d3ed3645d315f4b9d6c7e51f824970c1
 P
@@ -147,3 +145,25 @@ S
 #react-final/src/shop/ShopRowItem.js,1/6/16a187185a1a2e6eb348bbbbd514fd33ebb28cab
 M
 react-final/src/shop/index.js,3/9/398b310e5798ccf1a063aad7a29a8e14ad418fb7
+U
+%react-day231214/src/component/Menu.js,b/4/b4aa9be8e6ed4d3ffd023679c5a2a82887b7a30b
+T
+$react-day231214/public/manifest.json,c/b/cb71a6cfe5b3e552513109598e84fae2b804cdc6
+Q
+!react-day231214/src/setupTests.js,2/4/24c644bfda83d0602dd7a5de3dd31c23dd1e71d6
+Q
+!react-day231214/src/RouterMain.js,3/d/3d43c23998b5b76ae3a54307e95c16428eb8d8d5
+K
+react-day231214/src/App.css,4/2/42abe7a84345dbdbb31658d1e6de5da16cd7c921
+J
+react-day231214/src/App.js,a/9/a9c52475f97c127468a5197af2a195257eea543a
+O
+react-day231214/src/App.test.js,5/c/5cb2def1dbe1d1ca27fa42f94fa814c24c3fbce3
+M
+react-day231214/src/index.css,7/d/7d529b96e102b62d66e67b3000d4b9d5444fbbcb
+L
+react-day231214/src/index.js,1/8/18b96f659726a320d2b7ecc9c624ff01a5fe550c
+M
+react-final/src/setupTests.js,b/5/b5feae5a82fe39c3fc09309c02e2852d382e586f
+K
+react-day231214/src/Root.js,3/7/374a32a201c24185d81586f7eada81eed4aa9eb6
