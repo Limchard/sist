@@ -65,4 +65,23 @@ public class ShopController {
         return shopService.getData(num);
     }
 
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam int num,
+                       HttpServletRequest request){
+        // save 경로 구하기
+        String path=request.getServletContext().getRealPath("/save");
+
+        // num에 해당하는 photo
+        String photo=shopService.getData(num).getPhoto();
+
+        // 해당 파일이 존재할 경우 삭제
+        File file=new File(path+"/"+photo);
+        if(file.exists()){
+            file.delete();
+        }
+        // db delete
+        shopService.deleteShop(num);
+    }
+
+
 }

@@ -28,4 +28,9 @@ public class ShopService implements ShopServiceInter {
         return shopMapper.getData(num);
     }
 
+    @Override
+    public void deleteShop(int num) {
+        shopMapper.deleteShop(num);
+    }
+
 }
