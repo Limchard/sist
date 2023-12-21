@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function Member(props) {
 
+    const navi=useNavigate();
     const [data,setData]=useState({
         id:'',
         name:'',
         pass:'',
         email:'',
         hp:'',
-        addr:''
+        addr:'',
+        emailOk:false
     });
 
 
@@ -38,6 +42,21 @@ function Member(props) {
             alert("비밀번호 확인을 해주세요");
             return;
         }
+
+        // insert
+        const insertUrl="http://localhost:9100/member/insert";
+        axios.post(insertUrl,data)
+            .then(res=>{
+                alert("insert 성공!!");
+                // 이동
+                navi("/shop/list")
+
+            });
+        if (!data.emailOk){ // null 값 체크 정도로 생각해주세요
+            alert("이메일 중복버튼을 눌러주세요");
+            return;
+        }
+
     }
 
     //data 입력시 호출
@@ -79,6 +98,24 @@ function Member(props) {
         } else {
             setPassOk(false);
         }
+
+    }
+
+    // 아이디 중복체크 확인
+    const onIdJungbokCheck=()=>{
+        const url="http://localhost:9100/member/idsearch?id="+data.id;
+
+        axios.get(url)
+            .then(res=>{
+                console.log(res.data); // 0 or 1
+                if (res.data===0){
+                    setBtnOk(true);
+                    alert("가입가능한 아이디 입니다.");
+                } else {
+                    setBtnOk(false);
+                    alert("이미 가입중인 아이디 입니다.")
+                }
+            })
     }
 
 
@@ -95,7 +132,7 @@ function Member(props) {
                             <input type='text' className='form-control' style={{width: '130px'}}
                                    name='id' required onChange={onDataChange}/>
                             <button type='button' className='btn btn-danger'
-                                    style={{marginLeft: '5px'}}>중복체크
+                                    style={{marginLeft: '5px'}} onClick={onIdJungbokCheck}>중복체크
                             </button>
                         </td>
                     </tr>
@@ -118,7 +155,7 @@ function Member(props) {
                                    required onChange={onPassChange}/>
 
 
-                            <span style={{marginLeft: '5px', color: 'red'}}>비밀번호 확인할예정</span>
+                            <span style={{marginLeft: '5px', color: 'red'}}>{passOk?'ok':'fail'}</span>
                         </td>
                     </tr>
 
@@ -142,9 +179,18 @@ function Member(props) {
                                 <option value='gmail.com'>구글</option>
                                 <option value='daum.net'>한메일</option>
                             </select>
+
+                            <button type={"button"} className={'btn btn-danger'}
+                                    onClick={()=>{
+                                setData({
+                                    ...data,
+                                    email: `${email1}@${email2}`,
+                                    emailOk: true
+                                });
+                                alert("이메일 중복 확인")
+                            }}> 이메일 중복체크 </button>
                         </td>
                     </tr>
-
 
                     <tr>
                         <th width='100'>핸드폰</th>
@@ -154,7 +200,6 @@ function Member(props) {
                         </td>
                     </tr>
 
-
                     <tr>
                         <th width='100'>주소</th>
                         <td>
@@ -163,11 +208,13 @@ function Member(props) {
                         </td>
                     </tr>
 
-
                     <tr>
                         <td colSpan={2} style={{textAlign: 'center'}}>
                             <button type='submit' className='btn btn-info'>가입하기</button>
-                            <button type='button' className='btn btn-success'>목록</button>
+                            <button type='button' className='btn btn-success'
+                            onClick={()=>{
+                                navi("/member/list")
+                            }}>목록</button>
                         </td>
                     </tr>
                     </tbody>

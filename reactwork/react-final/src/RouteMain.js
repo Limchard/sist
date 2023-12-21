@@ -5,7 +5,8 @@ import Shop from "./shop/Shop";
 import Board from "./board/Board";
 import Member from "./member/Member";
 import Login from "./login/Login";
-import {ShopDetail, ShopForm} from "./shop"; // 인덱스를 만들어줘야 이렇게 보기좋게 가독성 좋게 표현된다. 굳이 안써도 되지만 가독성을 위해 index.js를 만들어준다.
+import {ShopDetail, ShopForm} from "./shop";
+import MemberList from "./member/MemberList"; // 인덱스를 만들어줘야 이렇게 보기좋게 가독성 좋게 표현된다. 굳이 안써도 되지만 가독성을 위해 index.js를 만들어준다.
 
 
 function RouteMain(props) {
@@ -26,7 +27,11 @@ function RouteMain(props) {
 
 
                     <Route path={'/board/list'} element={<Board/>}/>
+
+                    {/* member */}
                     <Route path={'/member/form'} element={<Member/>}/>
+                    <Route path={'/member/list'} element={<MemberList/>}/>
+
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/about'} element={<About/>}/>
                     <Route path={'*'} element={

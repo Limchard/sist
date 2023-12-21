@@ -167,5 +167,13 @@ M
 react-final/src/setupTests.js,b/5/b5feae5a82fe39c3fc09309c02e2852d382e586f
 K
 react-day231214/src/Root.js,3/7/374a32a201c24185d81586f7eada81eed4aa9eb6
+R
+"react-final/src/login/LoginForm.js,8/7/87d54ab1690cac51305d74ca89244d5ae022c7e7
+O
+react-final/src/login/Logout.js,7/1/7137271274b7912fd787e48d4333537d5f941b04
+T
+$react-final/src/member/MemberList.js,a/e/ae3fa6c7fca515446f8b3dbe64845207830bd467
 Q
-!react-final/src/member/Member2.js,5/e/5e623f13b2c501b40e197261fda125195e6924ae
+!react-day231208/package-lock.json,d/b/dbe0f9d9b28556c868a91c06f2c844561a2f7526
+I
+react-day231208/yarn.lock,d/9/d94fe7535a4272b8166991288b255ada1b9a5d1d

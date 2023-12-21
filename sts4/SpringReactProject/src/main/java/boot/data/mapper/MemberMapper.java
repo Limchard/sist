@@ -13,5 +13,6 @@ public interface MemberMapper {
     public int getSerchId(String id);
     public String getName(String id);
     public int loginPassCheck(Map<String, String> map); // MyBatis라서 Map을 사용해야 함.. String, String 따로 못받음..
+    public void deleteMember(int num);
 
 }
